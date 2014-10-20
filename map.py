@@ -10,7 +10,9 @@ the surrounded by vicious creatures, thirsty for blood.""",
 
     "exits": {"north": "Forest", "west": "Arena", "enter": "Shops"},
 
-    "items": []
+    "items": [],
+
+    "battle": False
 }
 
 place_forest = {
@@ -21,7 +23,9 @@ place_forest = {
 
     "exits":  {"south": "Village", "north": "Deeper", "east": "Water", "west": "Caves"},
 
-    "items": []
+    "items": [],
+
+    "battle": True
 }
 
 place_deeper = {
@@ -32,7 +36,9 @@ place_deeper = {
 
     "exits": {"south": "Forest"},
 
-    "items": []
+    "items": [],
+
+    "battle": True
 }
 
 place_water = {
@@ -43,7 +49,9 @@ place_water = {
 
     "exits": {"west": "Forest"},
 
-    "items": []
+    "items": [],
+
+    "battle": True
 }
 
 place_caves = {
@@ -54,7 +62,9 @@ place_caves = {
 
     "exits": {"east": "Forest"},
 
-    "items": []
+    "items": [],
+
+    "battle": True
 }
 
 place_shops = {
@@ -65,7 +75,9 @@ place_shops = {
 
     "exits": {"exit": "Village", "north": "Armour", "east": "Gym", "south": "Weapons", "west": "Home"},
 
-    "items": []
+    "items": [],
+
+    "battle": False
 }
 
 place_arena = {
@@ -75,7 +87,9 @@ place_arena = {
 
     "exits": {"east": "Village", "south": "Battle", "north": "Legends"},
 
-    "items": []
+    "items": [],
+
+    "battle": False
 }
 
 place_legends = {
@@ -86,7 +100,9 @@ place_legends = {
 
     "exits": {"south": "Arena"},
 
-    "items": []
+    "items": [],
+
+    "battle": False
 }
 
 place_battle = {
@@ -97,7 +113,9 @@ place_battle = {
 
     "exits": {"north": "Arena"},
 
-    "items": []
+    "items": [],
+
+    "battle": False
 }
 
 place_gym = {
@@ -108,7 +126,9 @@ place_gym = {
 
     "exits": {"west": "Shops"},
 
-    "items": []
+    "items": [],
+
+    "battle": False
 }
 
 place_weapons = {
@@ -119,7 +139,9 @@ place_weapons = {
 
     "exits": {"north": "Shops"},
 
-    "items": [weapon_dagger, weapon_sword, weapon_2hand]
+    "items": [weapon_dagger, weapon_sword, weapon_2hand],
+
+    "battle": False
 }
 
 place_armour = {
@@ -130,7 +152,9 @@ place_armour = {
 
     "exits": {"south": "Shops"},
 
-    "items": [armour_halfhelm, armour_chain, armour_plate]
+    "items": [armour_halfhelm, armour_chain, armour_plate],
+
+    "battle": False
 }
 
 place_home = {
@@ -141,7 +165,9 @@ place_home = {
 
     "exits": {"east": "Shops"},
 
-    "items": []
+    "items": [],
+
+    "battle": False
 }
 
 places = {

@@ -200,14 +200,16 @@ def print_menu(exits, room_items, inv_items):
     print()
     print("You can:")
     print()
-    # Iterate over available exits
     for direction in exits:
-        # Print the exit name and where it leads to
         print_exit(direction, exit_leads_to(exits, direction))
     for item in room_items:
         print("TAKE " + item["id"] + " to take " + item["name"] + ".")
     for item in inv_items:
         print("DROP " + item["id"] + " to drop " + item["name"] + ".")
+    if current_place["battle"] == True:
+        print("Explore the local area.")
+    if current_place == places["Gym"]:
+        print("Train strength, defence or speed.")
     print()
     print("What do you want to do?")
 
@@ -252,13 +254,11 @@ def execute_take(item_id):
     there is no such item in the room, this function prints
     "You cannot take that."
     """
-    weight = 0
-    for x in inventory:
-        weight += x["mass"]
     for item in current_place["items"]:
         if item["id"] == item_id:
-            weight += item["mass"]
-            if weight < 4.0:
+            print(stats["mass"])
+            if (stats["mass"] + item["mass"]) <= (stats["strength"] / 5):
+                stats["mass"] =+ item["mass"]
                 inventory.append(item)
                 current_place["items"].remove(item)
                 return
@@ -276,12 +276,20 @@ def execute_drop(item_id):
     """
     for item in inventory:
         if item["id"] == item_id:
+            stats["mass"] =- item["mass"] 
             current_place["items"].append(item)
             inventory.remove(item)
             return
     print("You don't have that to drop it.")
     pass
+
+def execute_explore():
+    #Random encounters for either battling or finding items.
+    print("explore " + current_place["name"])
     
+def execute_train(stat):
+    print("train " + stat)
+    #Train a stat at the gym, GET DENCH!
 
 def execute_command(command):
     """This function takes a command (a list of words as returned by
@@ -307,7 +315,13 @@ def execute_command(command):
             execute_drop(command[1])
         else:
             print("Drop what?")
-
+    elif command[0] == "explore":
+        execute_explore()
+    elif command[0] == "train":
+        if len(command) > 1:
+            execute_train(command[1])
+        else:
+            print("Train what?")
     else:
         print("This makes no sense.")
 

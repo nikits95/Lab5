@@ -4,14 +4,15 @@ from map import places
 inventory = []
 
 stats = {
-	"Health": 100,
+	"health": 100,
 
-	"Strength": 10,
+	"strength": 10,
 
-	"Defence": 10,
+	"defence": 10,
 
-	"Speed": 10
+	"speed": 10,
+
+	"mass": 0.0
 }
 
-# Start game at the reception
 current_place = places["Home"]
