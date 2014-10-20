@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from map import rooms
+from map import places
 from player import *
 from items import *
 from gameparser import *
@@ -40,15 +40,15 @@ def print_room_items(room):
     items.py for the definition of an item. This function uses list_of_items()
     to produce a comma-separated list of item names. For example:
 
-    >>> print_room_items(rooms["Reception"])
+    >>> print_room_items(places["Reception"])
     There is a pack of biscuits, a student handbook here.
     <BLANKLINE>
 
-    >>> print_room_items(rooms["Office"])
+    >>> print_room_items(places["Office"])
     There is a pen here.
     <BLANKLINE>
 
-    >>> print_room_items(rooms["Robs"])
+    >>> print_room_items(places["Robs"])
 
     (no output)
 
@@ -71,8 +71,9 @@ def print_inventory_items(items):
     <BLANKLINE>
 
     """
-    print("You have " + list_of_items(items) + ".")
-    print("")
+    if len(items) > 0:
+        print("You have " + list_of_items(items) + ".")
+        print("")
     pass
 
 
@@ -85,7 +86,7 @@ def print_room(room):
     in the room, the list of items is printed next followed by a blank line
     (use print_room_items() for this). For example:
 
-    >>> print_room(rooms["Office"])
+    >>> print_room(places["Office"])
     <BLANKLINE>
     THE GENERAL OFFICE
     <BLANKLINE>
@@ -97,7 +98,7 @@ def print_room(room):
     There is a pen here.
     <BLANKLINE>
 
-    >>> print_room(rooms["Reception"])
+    >>> print_room(places["Reception"])
     <BLANKLINE>
     RECEPTION
     <BLANKLINE>
@@ -111,7 +112,7 @@ def print_room(room):
     There is a pack of biscuits, a student handbook here.
     <BLANKLINE>
 
-    >>> print_room(rooms["Robs"])
+    >>> print_room(places["Robs"])
     <BLANKLINE>
     ROBS' ROOM
     <BLANKLINE>
@@ -140,14 +141,14 @@ def exit_leads_to(exits, direction):
     exit taken from this dictionary). It returns the name of the room into which
     this exit leads. For example:
 
-    >>> exit_leads_to(rooms["Reception"]["exits"], "south")
+    >>> exit_leads_to(places["Reception"]["exits"], "south")
     "Robs' room"
-    >>> exit_leads_to(rooms["Reception"]["exits"], "east")
+    >>> exit_leads_to(places["Reception"]["exits"], "east")
     "your personal tutor's office"
-    >>> exit_leads_to(rooms["Tutor"]["exits"], "west")
+    >>> exit_leads_to(places["Tutor"]["exits"], "west")
     'Reception'
     """
-    return rooms[exits[direction]]["name"]
+    return places[exits[direction]]["name"]
 
 
 def print_exit(direction, leads_to):
@@ -218,13 +219,13 @@ def is_valid_exit(exits, chosen_exit):
     the name of the exit has been normalised by the function normalise_input().
     For example:
 
-    >>> is_valid_exit(rooms["Reception"]["exits"], "south")
+    >>> is_valid_exit(places["Reception"]["exits"], "south")
     True
-    >>> is_valid_exit(rooms["Reception"]["exits"], "up")
+    >>> is_valid_exit(places["Reception"]["exits"], "up")
     False
-    >>> is_valid_exit(rooms["Parking"]["exits"], "west")
+    >>> is_valid_exit(places["Parking"]["exits"], "west")
     False
-    >>> is_valid_exit(rooms["Parking"]["exits"], "east")
+    >>> is_valid_exit(places["Parking"]["exits"], "east")
     True
     """
     return chosen_exit in exits
@@ -237,9 +238,9 @@ def execute_go(direction):
     moving). Otherwise, it prints "You cannot go there."
 
     """
-    global current_room
-    if is_valid_exit(current_room["exits"], direction) == True:
-        current_room = move(current_room["exits"], direction)
+    global current_place
+    if is_valid_exit(current_place["exits"], direction) == True:
+        current_place = move(current_place["exits"], direction)
     else:
         print("You cannot go there.")
     pass
@@ -254,12 +255,12 @@ def execute_take(item_id):
     weight = 0
     for x in inventory:
         weight += x["mass"]
-    for item in current_room["items"]:
+    for item in current_place["items"]:
         if item["id"] == item_id:
             weight += item["mass"]
-            if weight < 1.6:
+            if weight < 4.0:
                 inventory.append(item)
-                current_room["items"].remove(item)
+                current_place["items"].remove(item)
                 return
             else:
                 print("The weight is too much, try dropping someting.")
@@ -275,7 +276,7 @@ def execute_drop(item_id):
     """
     for item in inventory:
         if item["id"] == item_id:
-            current_room["items"].append(item)
+            current_place["items"].append(item)
             inventory.remove(item)
             return
     print("You don't have that to drop it.")
@@ -337,16 +338,16 @@ def move(exits, direction):
     dictionary "exits" of avaiable exits, they choose to move towards the exit
     with the name given by "direction". For example:
 
-    >>> move(rooms["Reception"]["exits"], "south") == rooms["Robs"]
+    >>> move(places["Reception"]["exits"], "south") == places["Robs"]
     True
-    >>> move(rooms["Reception"]["exits"], "east") == rooms["Tutor"]
+    >>> move(places["Reception"]["exits"], "east") == places["Tutor"]
     True
-    >>> move(rooms["Reception"]["exits"], "west") == rooms["Office"]
+    >>> move(places["Reception"]["exits"], "west") == places["Office"]
     False
     """
 
     # Next room to go to
-    return rooms[exits[direction]]
+    return places[exits[direction]]
 
 
 # This is the entry point of our program
@@ -355,11 +356,11 @@ def main():
     # Main game loop
     while True:
         # Display game status (room description, inventory etc.)
-        print_room(current_room)
+        print_room(current_place)
         print_inventory_items(inventory)
 
         # Show the menu with possible actions and ask the player
-        command = menu(current_room["exits"], current_room["items"], inventory)
+        command = menu(current_place["exits"], current_place["items"], inventory)
 
         # Execute the player's command
         execute_command(command)

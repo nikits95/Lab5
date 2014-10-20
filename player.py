@@ -1,7 +1,17 @@
 from items import *
-from map import rooms
+from map import places
 
-inventory = [item_id, item_laptop, item_money]
+inventory = []
+
+stats = {
+	"Health": 100,
+
+	"Strength": 10,
+
+	"Defence": 10,
+
+	"Speed": 10
+}
 
 # Start game at the reception
-current_room = rooms["Reception"]
+current_place = places["Home"]

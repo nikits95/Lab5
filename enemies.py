@@ -1,4 +1,3 @@
-from map import rooms
 from items import *
 
 enemy_kirill = {
@@ -10,5 +9,5 @@ enemy_kirill = {
 
 	"defence" : 15,
 
-	"reward" : item_laptop
+	"reward" : weapon_2hand
 }

@@ -1,63 +1,62 @@
-item_id = {
-    "id": "id",
+weapon_dagger = {
+    "id": "dagger",
 
-    "name": "id card",
-
-    "description":
-    """You new shiny student ID card. Expires 1 June 2017.
-You wonder why they have printed a suicide hotline number on it?...""",
-
-    "mass": 0.1
-}
-
-item_laptop = {
-    "id": "laptop",
-
-    "name": "laptop",
+    "name": "Short Dagger",
 
     "description":
-    "It has seen better days. At least it has a WiFi card!",
-
-    "mass": 1.5
-}
-
-item_money = {
-    "id": "money",
-
-    "name": "money",
-
-    "description":
-    "This wad of cash is barely enough to pay your tuition fees.",
-
-    "mass": 0.2
-}
-
-item_biscuits = {
-    "id": "biscuits",
-
-    "name": "a pack of biscuits",
-
-    "description": "A pack of biscuits.",
+    """A nice small dagger used for stabbing people.""",
 
     "mass": 0.5
 }
 
-item_pen = {
-    "id": "pen",
-    
-    "name": "a pen",
+weapon_sword = {
+    "id": "sword",
 
-    "description": "A basic ballpoint pen.",
+    "name": "Sword",
 
-    "mass": 0.1
+    "description":
+    """Perfect weapon for parrying blows and cutting flesh.""",
+
+    "mass": 1.5
 }
 
-item_handbook = {
-    "id": "handbook",
+weapon_2hand = {
+    "id": "2hand",
+
+    "name": "Two-Handed Sword",
+
+    "description":
+    "A powerful and heavy sword requiring strength to weild it.",
+
+    "mass": 4.0
+}
+
+armour_halfhelm = {
+    "id": "halfhelm",
+
+    "name": "Halfhelm",
+
+    "description": "A halfhelm, perfect for agile moving and blocking slight blows.",
+
+    "mass": 0.5
+}
+
+armour_chain = {
+    "id": "chain",
     
-    "name": "a student handbook",
+    "name": "Chain Vest",
 
-    "description": "This student handbook explains everything. Seriously.",
+    "description": "A reasonable piece or armour made to protect torso and arms from slight blows.",
 
-    "mass": 0.8
+    "mass": 1.5
+}
+
+armour_plate = {
+    "id": "plate",
+    
+    "name": "Plate Mail",
+
+    "description": "A heavy piece of plate mail that can protect your body from lots of damage.",
+
+    "mass": 4.0
 }

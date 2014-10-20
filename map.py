@@ -1,81 +1,161 @@
 from items import *
+from enemies import *
 
-room_reception = {
-    "name": "Reception",
-
-    "description":
-    """You are in a maze of twisty little passages, all alike.
-Next to you is the School of Computer Science and
-Informatics reception. The receptionist, Matt Strangis,
-seems to be playing an old school text-based adventure
-game on his computer. There are corridors leading to the
-south and east. The exit is to the west.""",
-
-    "exits": {"south": "Robs", "east": "Tutor", "west": "Parking"},
-
-    "items": [item_biscuits, item_handbook]
-}
-
-room_robs = {
-    "name": "Robs' room",
+place_village = {
+    "name": "Village Gates",
 
     "description":
-    """You are leaning agains the door of the systems managers'
-room. Inside you notice Rob Evans and Rob Davies. They
-ignore you. To the north is the reception.""",
+    """A small town situated in the country of Azgorth. Home to mighty warriors and 
+the surrounded by vicious creatures, thirsty for blood.""",
 
-    "exits":  {"north": "Reception"},
+    "exits": {"north": "Forest", "west": "Arena", "enter": "Shops"},
 
     "items": []
 }
 
-room_tutor = {
-    "name": "your personal tutor's office",
+place_forest = {
+    "name": "The Forest",
 
     "description":
-    """You are in your personal tutor's office. He intently
-stares at his huge monitor, ignoring you completely.
-On the desk you notice a cup of coffee and an empty
-pack of biscuits. The reception is to the west.""",
+    """The spooky Forest, containing evil men and demons and shit.""",
 
-    "exits": {"west": "Reception"},
+    "exits":  {"south": "Village", "north": "Deeper", "east": "Water", "west": "Caves"},
 
     "items": []
 }
 
-room_parking = {
-    "name": "the parking lot",
+place_deeper = {
+    "name": "Deep Forest",
 
     "description":
-    """You are standing in the Queen's Buildings parking lot.
-You can go south to the COMSC reception, or east to the
-general office.""",
+    """A place of enteral night where only the deadliest of monsters travel.""",
 
-    "exits": {"east": "Office", "south": "Reception"},
+    "exits": {"south": "Forest"},
 
     "items": []
 }
 
-room_office = {
-    "name": "the general office",
+place_water = {
+    "name": "Forest Stream",
 
     "description":
-    """You are standing next to the cashier's till at
-30-36 Newport Road. The cashier looks at you with hope
-in their eyes. If you go west you can return to the
-Queen's Buildings.""",
+    """A small stream trickling through the Forest, most likely attracting animals.""",
 
-    "exits": {"west": "Parking"},
+    "exits": {"west": "Forest"},
 
-    "items": [item_pen]
+    "items": []
 }
 
+place_caves = {
+    "name": "Mountain Caves",
 
+    "description":
+    """A series of caves twisting deep into the face of a mountain, home to who knows what creatures.""",
 
-rooms = {
-    "Reception": room_reception,
-    "Robs": room_robs,
-    "Tutor": room_tutor,
-    "Parking": room_parking,
-    "Office": room_office
+    "exits": {"east": "Forest"},
+
+    "items": []
+}
+
+place_shops = {
+    "name": "Town Center",
+
+    "description":
+    """The town center containing all the shops.""",
+
+    "exits": {"exit": "Village", "north": "Armour", "east": "Gym", "south": "Weapons", "west": "Home"},
+
+    "items": []
+}
+
+place_arena = {
+    "name": "Arena",
+
+    "description": """The place to prove your worth and reflect on the best.""",
+
+    "exits": {"east": "Village", "south": "Battle", "north": "Legends"},
+
+    "items": []
+}
+
+place_legends = {
+    "name": "Hall of Legends",
+
+    "description":
+    """The place to look at the record books.""",
+
+    "exits": {"south": "Arena"},
+
+    "items": []
+}
+
+place_battle = {
+    "name": "Battle Field",
+
+    "description":
+    """The place to fight warriors.""",
+
+    "exits": {"north": "Arena"},
+
+    "items": []
+}
+
+place_gym = {
+    "name": "Gym",
+
+    "description":
+    """The place to get buff.""",
+
+    "exits": {"west": "Shops"},
+
+    "items": []
+}
+
+place_weapons = {
+    "name": "Weapons",
+
+    "description":
+    """The place to get weapons.""",
+
+    "exits": {"north": "Shops"},
+
+    "items": [weapon_dagger, weapon_sword, weapon_2hand]
+}
+
+place_armour = {
+    "name": "Armour",
+
+    "description":
+    """The place to get armour.""",
+
+    "exits": {"south": "Shops"},
+
+    "items": [armour_halfhelm, armour_chain, armour_plate]
+}
+
+place_home = {
+    "name": "Home",
+
+    "description":
+    """The place you live, obviously.""",
+
+    "exits": {"east": "Shops"},
+
+    "items": []
+}
+
+places = {
+    "Home": place_home,
+    "Armour": place_armour,
+    "Village": place_village,
+    "Forest": place_forest,
+    "Gym": place_gym,
+    "Shops": place_shops,
+    "Arena": place_arena,
+    "Legends": place_legends,
+    "Battle": place_battle,
+    "Weapons": place_weapons,
+    "Caves": place_caves,
+    "Water": place_water,
+    "Deeper": place_deeper
 }
