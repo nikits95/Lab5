@@ -5,8 +5,17 @@ from player import *
 from items import *
 from gameparser import *
 from enemies import *
-import random
+import sys,time,random
 
+typing_speed = 100
+
+
+def slow_type(t):
+    global typing_speed
+    for l in t:
+        sys.stdout.write(l)
+        sys.stdout.flush()
+        time.sleep(random.random()*10.0/typing_speed)
 
 
 def list_of_items(items):
@@ -130,7 +139,7 @@ def print_room(room):
     print(room["name"].upper())
     print()
     # Display room description
-    print(room["description"])
+    slow_type(room["description"])
     print()
     print_room_items(room)
 
