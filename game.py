@@ -6,6 +6,8 @@ from items import *
 from gameparser import *
 from enemies import *
 import random
+import os
+import time
 
 
 
@@ -408,9 +410,64 @@ def move(exits, direction):
     # Next room to go to
     return places[exits[direction]]
 
+def print_game_menu():
+    print()
+    print()
+    print()
+    print('{:^80}'.format("Start Game - Press 1"))
+    print()
+    print('{:^80}'.format("Score Board - Press 2"))
+    print()
+    print('{:^80}'.format("How to play - Press 3"))
+    print()
+    print('{:^80}'.format("Exit - Press 4"))
+    print()
+    user_choice = input("Press a Number and hit ENTER . . . ")
+    return user_choice
+
+def print_score_board():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print()
+    print('{:^80}'.format("Here is the score board"))
+    print()
+    user_choice = input("Press key to return to menu . . . ")
+    return
+
+def print_rules():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print()
+    print('{:^80}'.format("Here are the rules"))
+    print()
+    user_choice = input("Press key to return to menu . . . ")
+    return
+
+def exit_game():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print()
+    print('{:^80}'.format("GOOD BYE"))
+    print()
+    time.sleep(1)
+    return
+
 
 # This is the entry point of our program
 def main():
+
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        option = print_game_menu()
+        if option == "1":
+            break;
+        if option == "2": 
+            print_score_board()
+        if option == "3": 
+            print_rules()
+        if option == "4": 
+            exit_game()
+            return
+
+
+    os.system('cls' if os.name == 'nt' else 'clear') 
 
     # Main game loop
     while True:
