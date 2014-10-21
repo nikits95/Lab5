@@ -2,13 +2,13 @@ from items import *
 from enemies import *
 
 place_village = {
-    "name": "Village Gates",
+    "name": "Village",
 
     "description":
     """A small town situated in the country of Azgorth. Home to mighty warriors and 
 the surrounded by vicious creatures, thirsty for blood.""",
 
-    "exits": {"north": "Forest", "west": "Arena", "enter": "Shops"},
+    "exits": {"north": "Arena", "east": "Caves", "south": "Lake", "west": "Forest", "enter": "Shops"},
 
     "items": [],
 
@@ -16,12 +16,12 @@ the surrounded by vicious creatures, thirsty for blood.""",
 }
 
 place_forest = {
-    "name": "The Forest",
+    "name": "The Spooky Forest",
 
     "description":
     """The spooky Forest, containing evil men and demons and shit.""",
 
-    "exits":  {"south": "Village", "north": "Deeper", "east": "Water", "west": "Caves"},
+    "exits":  {"west": "Village", "north": "Deeper", "south": "Stream"},
 
     "items": [],
 
@@ -41,13 +41,13 @@ place_deeper = {
     "battle": True
 }
 
-place_water = {
+place_stream = {
     "name": "Forest Stream",
 
     "description":
     """A small stream trickling through the Forest, most likely attracting animals.""",
 
-    "exits": {"west": "Forest"},
+    "exits": {"north": "Forest"},
 
     "items": [],
 
@@ -55,12 +55,25 @@ place_water = {
 }
 
 place_caves = {
-    "name": "Mountain Caves",
+    "name": "Forbidden Caves",
 
     "description":
     """A series of caves twisting deep into the face of a mountain, home to who knows what creatures.""",
 
-    "exits": {"east": "Forest"},
+    "exits": {"west": "Village", "east": "Knight", "north": "Goblin", "south": "Gut Feeling"},
+
+    "items": [],
+
+    "battle": True
+}
+
+place_lake = {
+    "name": "The Green Lake",
+
+    "description":
+    """A greenish lake with the Kraken in. I know it's a shit temporary description just go with it.""",
+
+    "exits": {"north": "Village"},
 
     "items": [],
 
@@ -73,7 +86,7 @@ place_shops = {
     "description":
     """The town center containing all the shops.""",
 
-    "exits": {"exit": "Village", "north": "Armour", "east": "Gym", "south": "Weapons", "west": "Home"},
+    "exits": {"exit": "Village", "north": "Gym", "east": "Armour", "south": "Weapons", "west": "Home"},
 
     "items": [],
 
@@ -85,20 +98,20 @@ place_arena = {
 
     "description": """The place to prove your worth and reflect on the best.""",
 
-    "exits": {"east": "Village", "south": "Battle", "north": "Legends"},
+    "exits": {"south": "Village", "west": "Battle", "east": "Leaderboards"},
 
     "items": [],
 
     "battle": False
 }
 
-place_legends = {
-    "name": "Hall of Legends",
+place_leaderboard = {
+    "name": "Leaderboard",
 
     "description":
     """The place to look at the record books.""",
 
-    "exits": {"south": "Arena"},
+    "exits": {"east": "Arena"},
 
     "items": [],
 
@@ -106,16 +119,16 @@ place_legends = {
 }
 
 place_battle = {
-    "name": "Battle Field",
+    "name": "Battlefield",
 
     "description":
     """The place to fight warriors.""",
 
-    "exits": {"north": "Arena"},
+    "exits": {"east": "Arena"},
 
     "items": [],
 
-    "battle": False
+    "battle": True
 }
 
 place_gym = {
@@ -178,10 +191,11 @@ places = {
     "Gym": place_gym,
     "Shops": place_shops,
     "Arena": place_arena,
-    "Legends": place_legends,
+    "Leaderboard": place_leaderboard,
     "Battle": place_battle,
     "Weapons": place_weapons,
     "Caves": place_caves,
-    "Water": place_water,
+    "Stream": place_Stream,
     "Deeper": place_deeper
+    "Lake": place_lake
 }
