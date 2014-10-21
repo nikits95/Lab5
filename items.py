@@ -61,12 +61,3 @@ armour_plate = {
     "mass": 4.0
 }
 
-misc_money = {
-    "id": "money",
-
-    "name": "Gold Pieces",
-
-    "description": "Every day currency.",
-
-    "mass": 1.0
-}

@@ -5,17 +5,8 @@ from player import *
 from items import *
 from gameparser import *
 from enemies import *
-import sys,time,random
+import random
 
-typing_speed = 100
-
-
-def slow_type(t):
-    global typing_speed
-    for l in t:
-        sys.stdout.write(l)
-        sys.stdout.flush()
-        time.sleep(random.random()*10.0/typing_speed)
 
 
 def list_of_items(items):
@@ -139,7 +130,7 @@ def print_room(room):
     print(room["name"].upper())
     print()
     # Display room description
-    slow_type(room["description"])
+    print(room["description"])
     print()
     print_room_items(room)
 
@@ -297,11 +288,16 @@ def execute_drop(item_id):
 def execute_explore():
     #Random encounters for either battling or finding items.
     print("explore " + current_place["name"])
-    #if random.randrange(1, 6, 1) < 5:
-
-    #    print("You encounter a random " + enemy_list[random.randrange(1, len(enemy_list), 1)]["name"])
-    #else:
-    #    print("You find a random ")
+    if random.randrange(1, 6, 1) < 5:
+        enemy = enemy_list[random.randrange(1, len(enemy_list), 1)]
+        print("You encounter a random " + enemy["name"])
+        result = fight_monster(enemy)
+        if result == True:
+            print("You slay the " + enemy["name"] + ".")
+        else:
+            print("The " + enemy["name"] + " fucking batters you bro, you suck.")
+    else:
+        print("You find a random ")
 
     
 def execute_train(stat):
@@ -340,6 +336,39 @@ def execute_command(command):
             print("Train what?")
     else:
         print("This makes no sense.")
+
+def fight_monster(enemy):
+    e_health = enemy["health"]
+    p_health = stats["health"]
+    counter = 0
+    p_counter = 0
+    e_counter = 0
+    while e_health > 0 and p_health > 0:
+        enemy_speed = random.randrange(enemy["speed"], enemy["speed"] * 2, 1)
+        player_speed = random.randrange(stats["speed"], stats["speed"] * 2, 1)
+        counter =+ 1
+        if enemy_speed > player_speed:
+            if (enemy["strength"] - stats["defence"]) > 0:
+                p_health = p_health - (enemy["strength"] - stats["defence"])
+                print("Player: " + str(p_health))
+                e_counter =+ 1
+        else:
+            if (stats["strength"] - enemy["defence"]) > 0:
+                e_health = e_health - (stats["strength"] - enemy["defence"])
+                print("Enemy: " + str(e_health))
+                p_counter =+ 1
+        if counter == 101:
+            print("The fight takes it's toll on both of you and you just lie there bleeding out, but who will bleed out quicker?")
+            if p_counter > e_counter:
+                return(True)
+            else:
+                return(False)
+    if e_health > 0:
+        return(False)
+    else:
+        return(True)
+
+
 
 
 def menu(exits, room_items, inv_items):

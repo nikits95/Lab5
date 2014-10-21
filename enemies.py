@@ -5,9 +5,11 @@ enemy_kirill = {
 
 	"health" : 100,
 
-	"attack" : 20,
+	"strength" : 20,
 
-	"defence" : 15,
+	"defence" : 5,
+
+	"speed" : 10,
 
 	"reward" : weapon_2hand
 }
@@ -16,5 +18,6 @@ enemy_kirill = {
 
 
 enemy_list = {
-	1 : enemy_kirill
+	1 : enemy_kirill,
+	2 : enemy_kirill
 }

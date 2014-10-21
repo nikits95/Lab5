@@ -86,7 +86,7 @@ place_shops = {
     "description":
     """The town center containing all the shops.""",
 
-    "exits": {"exit": "Village", "north": "Gym", "east": "Armour", "south": "Weapons", "west": "Home"},
+    "exits": {"north": "Gym", "east": "Armour", "south": "Weapons","west": "Home", "exit": "Village"},
 
     "items": [],
 
@@ -195,7 +195,7 @@ places = {
     "Battle": place_battle,
     "Weapons": place_weapons,
     "Caves": place_caves,
-    "Stream": place_Stream,
-    "Deeper": place_deeper
+    "Stream": place_stream,
+    "Deeper": place_deeper,
     "Lake": place_lake
 }

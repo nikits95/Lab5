@@ -6,7 +6,7 @@ inventory = []
 stats = {
 	"health": 100,
 
-	"strength": 10,
+	"strength": 20,
 
 	"defence": 10,
 
@@ -17,4 +17,4 @@ stats = {
 	"money": 0
 }
 
-current_place = places["Home"]
+current_place = places["Lake"]
