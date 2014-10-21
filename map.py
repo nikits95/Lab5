@@ -128,7 +128,7 @@ place_battle = {
 
     "items": [],
 
-    "battle": True
+    "battle": False
 }
 
 place_gym = {
