@@ -288,8 +288,12 @@ def execute_drop(item_id):
 def execute_explore():
     #Random encounters for either battling or finding items.
     print("explore " + current_place["name"])
-    if random.randrange(1, 5, 1) < 5:
-        
+    #if random.randrange(1, 6, 1) < 5:
+
+    #    print("You encounter a random " + enemy_list[random.randrange(1, len(enemy_list), 1)]["name"])
+    #else:
+    #    print("You find a random ")
+
     
 def execute_train(stat):
     stats[stat] = stats[stat] + 5
