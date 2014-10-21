@@ -348,18 +348,18 @@ def fight_monster(enemy):
     while e_health > 0 and p_health > 0:
         enemy_speed = random.randrange(enemy["speed"], enemy["speed"] * 2, 1)
         player_speed = random.randrange(stats["speed"], stats["speed"] * 2, 1)
-        counter =+ 1
+        counter = counter + 1
         if enemy_speed > player_speed:
+            e_counter = e_counter + 1
             if (enemy["strength"] - stats["defence"]) > 0:
                 p_health = p_health - (enemy["strength"] - stats["defence"])
                 print("Player: " + str(p_health))
-                e_counter =+ 1
         else:
+            p_counter = p_counter + 1
             if (stats["strength"] - enemy["defence"]) > 0:
                 e_health = e_health - (stats["strength"] - enemy["defence"])
                 print("Enemy: " + str(e_health))
-                p_counter =+ 1
-        if counter == 101:
+        if counter > 101:
             print("The fight takes it's toll on both of you and you just lie there bleeding out, but who will bleed out quicker?")
             if p_counter > e_counter:
                 return(True)
