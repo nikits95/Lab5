@@ -359,7 +359,7 @@ def fight_monster(enemy):
             if (stats["strength"] - enemy["defence"]) > 0:
                 e_health = e_health - (stats["strength"] - enemy["defence"])
                 print("Enemy: " + str(e_health))
-        if counter > 101:
+        if counter == 101:
             print("The fight takes it's toll on both of you and you just lie there bleeding out, but who will bleed out quicker?")
             if p_counter > e_counter:
                 return(True)
