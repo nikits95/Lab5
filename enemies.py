@@ -11,3 +11,10 @@ enemy_kirill = {
 
 	"reward" : weapon_2hand
 }
+
+
+
+
+enemy_list = {
+	1 : enemy_kirill
+}

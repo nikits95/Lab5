@@ -4,6 +4,8 @@ from map import places
 from player import *
 from items import *
 from gameparser import *
+from enemies import *
+import random
 
 
 
@@ -286,10 +288,11 @@ def execute_drop(item_id):
 def execute_explore():
     #Random encounters for either battling or finding items.
     print("explore " + current_place["name"])
+    if random.randrange(1, 5, 1) < 5:
+        
     
 def execute_train(stat):
-    print("train " + stat)
-    #Train a stat at the gym, GET DENCH!
+    stats[stat] = stats[stat] + 5
 
 def execute_command(command):
     """This function takes a command (a list of words as returned by

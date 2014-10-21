@@ -12,7 +12,9 @@ stats = {
 
 	"speed": 10,
 
-	"mass": 0.0
+	"mass": 0.0,
+
+	"money": 0
 }
 
 current_place = places["Home"]
