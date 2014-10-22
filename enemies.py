@@ -148,17 +148,17 @@ enemy_wildbear = {
 enemy_snake = {
 	"name" : "Snake",
 
-	"health" : 40,
+	"health" : 30,
 
-	"strength" : 10,
+	"strength" : 8,
 
 	"defence" : 5,
 
-	"speed" : 75,
+	"speed" : 8,
 
-	"reward" : weapon_2hand,
+	"reward" : "",
 
-	"money" : 30
+	"money" : 8
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -168,15 +168,15 @@ enemy_boar = {
 
 	"health" : 30,
 
-	"strength" : 20,
+	"strength" : 15,
 
-	"defence" : 5,
+	"defence" : 2,
 
-	"speed" : 10,
+	"speed" : 7,
 
-	"reward" : armour_ironhelmet,
+	"reward" : "",
 
-	"money" : 40
+	"money" : 5
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -202,17 +202,17 @@ enemy_owlbear = {
 enemy_gnolls = {
 	"name" : "Gnolls",
 
-	"health" : 20,
+	"health" : 60,
 
-	"strength" : 40,
+	"strength" : 16,
 
-	"defence" : 15,
+	"defence" : 13,
 
-	"speed" : 5,
+	"speed" : 10,
 
-	"reward" : armour_ironboots,
+	"reward" : "",
 
-	"money" : 45
+	"money" : 13
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -220,7 +220,7 @@ enemy_gnolls = {
 enemy_spider = {
 	"name" : "Spider",
 
-	"health" : 10,
+	"health" : 60,
 
 	"strength" : 10,
 
@@ -274,23 +274,23 @@ enemy_wildwolf = {
 enemy_deadlyscorp = {
 	"name" : "Deadly Scorpian",
 
-	"health" : 40,
+	"health" : 30,
 
-	"strength" : 70,
+	"strength" : 14,
 
-	"defence" : 5,
+	"defence" : 7,
 
-	"speed" : 10,
+	"speed" : 6,
 
-	"reward" : weapon_bow,
+	"reward" : "",
 
-	"money" : 50
+	"money" : 7
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
 
 enemy_kraken = {
-	"name" : "The Mighty Kraken",
+	"name" : "The Mighty Kraken",################################################################
 
 	"health" : 1000,
 
@@ -390,17 +390,17 @@ enemy_ogres = {
 enemy_babyminotaurs = {
 	"name" : "Baby Minotaurs",
 
-	"health" : 10,
+	"health" : 30,
 
-	"strength" : 20,
+	"strength" : 11,
 
-	"defence" : 10,
+	"defence" : 7,
 
-	"speed" : 10,
+	"speed" : 9,
 
 	"reward" : "",
 
-	"money" : 10
+	"money" : 6
 }
 
 enemy_chiefminotaurs = {
@@ -566,17 +566,17 @@ enemy_manticore = {
 enemy_possvillagers = {
 	"name" : "Possessed Villagers",
 
-	"health" : 50,
+	"health" : 40,
 
-	"strength" : 10,
+	"strength" : 11,
 
-	"defence" : 10,
+	"defence" : 8,
 
-	"speed" : 20,
+	"speed" : 5,
 
 	"reward" : "",
 
-	"money" : 20
+	"money" : 7
 }
 
 enemy_darkelves = {
@@ -646,17 +646,17 @@ enemy_rat = {
 enemy_crab = {
 	"name" : "Poisonous Crab",
 
-	"health" : 20,
+	"health" : 40,
 
-	"strength" : 60,
+	"strength" : 14,
 
-	"defence" : 10,
+	"defence" : 6,
 
-	"speed" : 10,
+	"speed" : 7,
 
 	"reward" : "",
 
-	"money" : 40
+	"money" : 8
 }
 
 enemy_giantcrab = {
@@ -835,54 +835,53 @@ enemy_lichking = {
 	"money" : 50
 }
 enemy_list = {
-	1 : enemy_giantspider,
-	2 : enemy_goblin,
-	3 : enemy_chiefgoblin,
-	4 : enemy_knight,
-	5 : enemy_gladiator,
-	6 : enemy_minihydra,
-	7 : enemy_giantrat,
-	8 : enemy_wildbear,
-	9 : enemy_snake,
-	10 : enemy_boar,
-	11 : enemy_owlbear,
-	12 : enemy_gnolls,
-	13 : enemy_spider,
-	14 : enemy_beastmen,
-	15 : enemy_wildwolf,
-	16 : enemy_deadlyscorp,
-	17 : enemy_kraken,
-	18 : enemy_ghoul,
-	19 : enemy_orc,
-	20 : enemy_cyclops,
+	1 : enemy_snake,
+	2 : enemy_boar,
+	3 : enemy_deadlyscorp,
+	4 : enemy_babyminotaurs,
+	5 : enemy_possvillagers,
+	6 : enemy_crab,
+	7 : enemy_gnolls,
+	8 : enemy_spider,
+	9 : enemy_wildwolf,
+	10 : enemy_centipede,
+	11 : enemy_serpent,
+	12 : enemy_frogzard,
+	13 : enemy_rat,
+	14 : enemy_bugbear,
+	15 : enemy_goblin,
+	16 : enemy_giantrat,
+	17 : enemy_wildbear,
+	18 : enemy_owlbear,
+	19 : enemy_beastmen,
+	20 : enemy_orc,
 	21 : enemy_groupwolf,
-	22 : enemy_ogres,
-	23 : enemy_babyminotaurs,
-	24 : enemy_chiefminotaurs,
-	25 : enemy_werewovles,
-	26 : enemy_hugeants,
-	27 : enemy_evilmonk,
-	28 : enemy_centipede,
-	29 : enemy_arachnoid,
-	30 : enemy_serpent,
-	31 : enemy_barghest,
-	32 : enemy_worgen,
-	33 : enemy_manticore,
-	34 : enemy_possvillagers,
-	35 : enemy_darkelves,
-	36 : enemy_frogzard,
-	37 : enemy_mantik,
-	38 : enemy_rat,
-	39 : enemy_crab,
-	40 : enemy_giantcrab,
-	41 : enemy_groupgoblin,
-	42 : enemy_twinserpent,
-	43 : enemy_phoenix,
-	44 : enemy_wraith,
-	45 : enemy_bugbear,
-	46 : enemy_giantorc,
-	47 : enemy_ettin,
-	48 : enemy_griffons,
-	49 : enemy_lich,
-	50 : enemy_lichking
+	22 : enemy_hugeants,
+	23 : enemy_arachnoid,
+	24 : enemy_darkelves,
+	25 : enemy_groupgoblin,
+	26 : enemy_giantorc,
+	27 : enemy_lich,
+	28 : enemy_chiefgoblin,
+	29 : enemy_knight,
+	30 : enemy_ghoul,
+	31 : enemy_cyclops,
+	32 : enemy_ogres,
+	33 : enemy_evilmonk,
+	34 : enemy_barghest,
+	35 : enemy_mantik,
+	36 : enemy_twinserpent,
+	37 : enemy_wraith,
+	38 : enemy_ettin,
+	39 : enemy_giantspider,
+	40 : enemy_griffons,
+	41 : enemy_gladiator,
+	42 : enemy_minihydra,
+	43 : enemy_chiefminotaurs,
+	44 : enemy_werewovles,
+	45 : enemy_worgen,
+	46 : enemy_manticore,
+	47 : enemy_giantcrab,
+	48 : enemy_phoenix,
+	49 : enemy_lichking
 }

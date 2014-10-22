@@ -25,7 +25,7 @@ place_forest = {
     Toward the north the forest starts to thicken as sunlight is almost completely lost amongst the trees,
     more strange noises can be heard deeper into the forest""",
 
-    "exits":  {"west": "Village", "north": "Deeper", "south": "Stream"},
+    "exits":  {"east": "Village", "north": "Deeper", "south": "Stream"},
 
     "items": [],
 
@@ -36,7 +36,7 @@ place_deeper = {
     "name": "Deep Forest",
 
     "description":
-    """The darkness of the forest limits your vision. The tree’s block the sunlight from above and a cold chill runs down your spine.
+    """The darkness of the forest limits your vision. The tree's block the sunlight from above and a cold chill runs down your spine.
     The strange noises that you heard before are getting louder the deeper you walk.""",
 
     "exits": {"south": "Forest"},
@@ -120,7 +120,7 @@ place_caves = {
     The walls of the western exit look blackened as if they have been burnt. The southern path leads to a dark deeper cave,
     but your gut feeling tells you that there is something of interest down there.""",
 
-    "exits": {"west": "Village", "east": "Knight", "north": "Goblin", "south": "Gut Feeling"},
+    "exits": {"west": "Village", "east": "Knight", "north": "Goblin", "south": "Gut"},
 
     "items": [],
 
@@ -134,7 +134,7 @@ place_lake = {
     """As you walk down the slippery banks toward the murky lake you notice that the water is not completely still.
     Small bubbles rise and then pop on the surface of the murky green water.
     As you descend the muddy banks of the lake your foot dislodges a stone and it falls into the lake.
-    To the south stands a small separate part of the lake, a sign with the words “Beware the beast” hangs loosely on a rock.""",
+    To the south stands a small separate part of the lake, a sign with the words "Beware the beast" hangs loosely on a rock.""",
 
     "exits": {"north": "Village", "south": "Lair"},
 
@@ -147,14 +147,14 @@ place_shops = {
     "name": "Town Center",
 
     "description":
-    """The hustle and bustle of village life moves quickly around you. The cobblestone path beneath you leads to the village square.
-    Which has an ornate sculpted fountain at the center with children playing games beside it.
-    Stalls selling goods and fine foods are spread amongst the crowds of people bartering for the best deals.
-    The stone houses surrounding the square look tired and withered, some of  the thatched roofs are crumbling.
-    Many a strange person can be seen amongst the crowds, an armorsmith is loudly hammering away at a steel chest piece towards the east.
-    A shop at the far southern end of the square has weapons displayed in its windows, to the north there is a training ground for knights and warriors alike,
-    where groups of men are sparring.
-    Your small home sits quaintly at the west side of the village.""",
+    """The hustle and bustle of village life moves quickly around you. The cobblestone path beneath you leads to the village square
+which has an ornate sculpted fountain at the center with children playing games beside it.
+Stalls selling goods and fine foods are spread amongst the crowds of people bartering for the best deals.
+The stone houses surrounding the square look tired and withered, some of  the thatched roofs are crumbling.
+Many a strange person can be seen amongst the crowds, an armorsmith is loudly hammering away at a steel chest piece towards the east.
+A shop at the far southern end of the square has weapons displayed in its windows, to the north there is a training ground for knights and warriors alike,
+where groups of men are sparring.
+Your small home sits quaintly at the west side of the village.""",
 
     "exits": {"north": "Gym", "east": "Armour", "south": "Weapons","west": "Home", "exit": "Village"},
 
@@ -168,10 +168,10 @@ place_arena = {
 
     "description": """As you approach the loud grounds of the arena you are met by two paths.
     The path leading towards the east marked arena has deafening amounts of cheering and people are rushing towards the circular fighting grounds.
-    A booth at the foot of the path is marked ‘FIGHTERS WANTED BIG REWARD’.
-    The path to the west leads towards a huge marble wall with rows upon rows of names chiseled into it, it is titled ‘Hall Of Fame'.""",
+    A booth at the foot of the path is marked, FIGHTERS WANTED BIG REWARD.
+    The path to the west leads towards a huge marble wall with rows upon rows of names chiseled into it, it is titled, Hall Of Fame.""",
 
-    "exits": {"south": "Village", "west": "Battle", "east": "Leaderboards"},
+    "exits": {"south": "Village", "west": "Battle", "east": "Leaderboard"},
 
     "items": [],
 
@@ -184,7 +184,7 @@ place_leaderboard = {
     "description":
     """This giant marble wall has rows upon rows of fallen warriors etched upon the marble.""",
 
-    "exits": {"east": "Arena"},
+    "exits": {"west": "Arena"},
 
     "items": [],
 
@@ -212,7 +212,7 @@ place_gym = {
     "name": "Gym",
 
     "description":
-    """The noise of angry men wrestling is met by the clang of swords clashing in the air. The sign reads above the fighting quarters “THE GYM.""",
+    """The noise of angry men wrestling is met by the clang of swords clashing in the air. The sign reads above the fighting quarters, THE GYM.""",
 
     "exits": {"south": "Shops"},
 
@@ -224,10 +224,9 @@ place_gym = {
 place_weapons = {
     "name": "Weapons",
 
-    "description":
-    """As you enter the weaponsmith’s shop you are stunned by the sheer amount of shiny weaponry there is on offer. ‘Hello friend!’
-    the weaponsmith shouts from behind the counter,
-    ‘And what is it i can do for you on this fine day?’. You approach the fat bearded man.""",
+    "description": """As you enter the weaponsmith shop you are stunned by the sheer amount of shiny weaponry there is on offer. 
+Hello friend! the weaponsmith shouts from behind the counter,
+And what is it i can do for you on this fine day? You approach the fat bearded man.""",
 
     "exits": {"north": "Shops"},
 
@@ -240,8 +239,8 @@ place_armour = {
     "name": "Armour",
 
     "description":
-    """The big burly armoursmith ignores you as you first walk in and continues to hammer away at a large steel sword.
-    You are amazed at the intricate armour displays that are on display. “What do you want?” the scarred armoursmith says.""",
+    """The big burly armoursmith ignores you as you first walk in and continues to hammer away at a large steel sword. You are amazed at the intricate armour displays that are on display. 
+What do you want? the scarred armoursmith says.""",
 
     "exits": {"west": "Shops"},
 
@@ -291,8 +290,8 @@ places = {
     "Stream": place_stream,
     "Deeper": place_deeper,
     "Lake": place_lake,
-    "Lair": place_lair
-    "Gut": place_gutfeel
-    "Knight": place_knight
+    "Lair": place_lair,
+    "Gut": place_gutfeel,
+    "Knight": place_knight,
     "Goblin": place_goblin
 }

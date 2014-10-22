@@ -217,8 +217,8 @@ def kraken_fight():
         print(" \   ^   /  | | \  | | \  | |___    |___/  |")
         print("  \ / \ /   | |  \ | |  \ | |       |   \  |")
         print("   V   V    | |   \| |   \| |_____  |    \ .")
-        print("    ")
     else:
+        print("")
         print("You wake up a bit disorientated in your own bed with a vague memory of fighting the Kraken.")
         print("You find a note that reads 'Don't be so stupid in future, leave the leviathon alone'.")
         stats["money"] = 0

@@ -14,7 +14,7 @@ stats = {
 
 	"mass": 0.0,
 
-	"money": 100
+	"money": 10
 }
 
 current_place = places["Home"]
