@@ -8,7 +8,7 @@ weapon_dagger = {
     "description":
     """A nice small dagger used for stabbing people and enemies.""",
 
-    "mass": 0.5,
+    "mass": 1.0,
 
     "damage": 10
 }
@@ -21,7 +21,7 @@ weapon_sword = {
     "description":
     """Perfect weapon for parrying blows and cutting flesh.""",
 
-    "mass": 1.5,
+    "mass": 2.5,
 
     "damage": 25
 }
@@ -34,7 +34,7 @@ weapon_2hand = {
     "description":
     "A powerful and heavy sword requiring strength to weild it.",
 
-    "mass": 4.0,
+    "mass": 3.5,
 
     "damage": 35
 }
@@ -47,7 +47,7 @@ weapon_hammer = {
     "description":
     "A heavy hammer which delivers a heavy blow upon inpact.",
 
-    "mass": 4.0,
+    "mass": 3.0,
 
     "damage": 30
 }
@@ -60,7 +60,7 @@ weapon_spear = {
     "description":
     "A sharp and deadly spear.",
 
-    "mass": 4.0,
+    "mass": 2.5,
 
     "damage": 25
 }
@@ -73,9 +73,9 @@ weapon_bow = {
     "description":
     "A versatile bow that can be used agasint your enemies..",
 
-    "mass": 0.75,
+    "mass": 1.5,
 
-    "damage": 45
+    "damage": 15
 }
 
 weapon_justicesword = {
@@ -86,7 +86,7 @@ weapon_justicesword = {
     "description":
     "A powerful diamond sword which can only be held by the worthy. It deliver a deadly blow to enemies.",
 
-    "mass": 4.0,
+    "mass": 20.0,
 
     "damage": 350
     #sword required to kill the Kraken
@@ -100,9 +100,9 @@ armour_halfhelm = {
 
     "description": "A halfhelm, perfect for agile moving and blocking slight blows.",
 
-    "mass": 0.5,
+    "mass": 1.0,
 
-    "defence": 20
+    "defence": 10
 }
 
 armour_chain = {
@@ -112,9 +112,9 @@ armour_chain = {
 
     "description": "A reasonable piece or armour made to protect torso and arms from slight blows.",
 
-    "mass": 1.5,
+    "mass": 2.5,
 
-    "defence": 20
+    "defence": 25
 }
 
 armour_plate = {
@@ -124,7 +124,7 @@ armour_plate = {
 
     "description": "A heavy piece of plate mail that can protect your body from lots of damage.",
 
-    "mass": 4.0,
+    "mass": 5.0,
 
     "defence": 50
 }
@@ -136,7 +136,7 @@ armour_ironhelmet = {
 
     "description": "A light piece of iron helmet that can protect you from lots of damage.",
 
-    "mass": 1.0,
+    "mass": 4.0,
 
     "defence": 40
 }
@@ -148,7 +148,7 @@ armour_ironchestplate = {
 
     "description": "A light piece of iron helmet that can protect your body from lots of damage.",
 
-    "mass": 1.0,
+    "mass": 2.0,
 
     "defence": 20
 }
@@ -172,9 +172,9 @@ armour_ironboots = {
 
     "description": "A light piece of iron boots that can protect you from lots of damage.",
 
-    "mass": 1.0,
+    "mass": 3.0,
 
-    "defence": 20
+    "defence": 30
 }
 
 armour_justice = {
@@ -184,7 +184,7 @@ armour_justice = {
 
     "description": "This super strong diamond armour can only be worn by the worthy. This piece of armour can withstand even the deadliest attacks. ",
 
-    "mass": 5.0,
+    "mass": 15.0,
 
     "defence": 400
 

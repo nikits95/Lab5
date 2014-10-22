@@ -22,7 +22,6 @@ current_place = places["Home"]
 #Sort out items weights.
 #Sort out paying for items subfunction
 #Random item finds.
-#Kraken Win condition
 #Arena
 #The map, Items in places.
 #LeaderBoard

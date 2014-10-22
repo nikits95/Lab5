@@ -73,7 +73,7 @@ place_lake = {
     "description":
     """A greenish lake with the Kraken in. I know it's a shit temporary description just go with it.""",
 
-    "exits": {"north": "Village"},
+    "exits": {"north": "Village", "south": "Lair"},
 
     "items": [],
 
@@ -183,6 +183,19 @@ place_home = {
     "battle": False
 }
 
+place_lair = {
+    "name": "Kraken Lair",
+
+    "description":
+    """Time to fight, prepare to die or have your name live on through history.""",
+
+    "exits": {},
+
+    "items": [],
+
+    "battle": False
+}
+
 places = {
     "Home": place_home,
     "Armour": place_armour,
@@ -197,5 +210,6 @@ places = {
     "Caves": place_caves,
     "Stream": place_stream,
     "Deeper": place_deeper,
-    "Lake": place_lake
+    "Lake": place_lake,
+    "Lair": place_lair
 }

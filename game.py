@@ -201,21 +201,36 @@ def print_menu(exits, room_items, inv_items):
     What do you want to do?
 
     """
-    print()
-    print("You can:")
-    print()
-    for direction in exits:
-        print_exit(direction, exit_leads_to(exits, direction))
-    for item in room_items:
-        print("TAKE " + item["id"] + " to take " + item["name"] + ".")
-    for item in inv_items:
-        print("DROP " + item["id"] + " to drop " + item["name"] + ".")
-    if current_place["battle"] == True:
-        print("Explore the local area.")
-    if current_place == places["Gym"]:
-        print("Train strength, defence or speed for a cost of 25 gold per stat?")
-    print()
-    print("What do you want to do?")
+    if current_place == places["Lair"]:
+        kraken_fight()
+    else:    
+        print()
+        print("You can:")
+        print()
+        for direction in exits:
+            print_exit(direction, exit_leads_to(exits, direction))
+        for item in room_items:
+            print("TAKE " + item["id"] + " to take " + item["name"] + ".")
+        for item in inv_items:
+            print("DROP " + item["id"] + " to drop " + item["name"] + ".")
+        if current_place["battle"] == True:
+            print("Explore the local area.")
+        if current_place == places["Gym"]:
+            print("Train strength, defence or speed for a cost of 25 gold per stat?")
+        print()
+        print("What do you want to do?")
+
+
+def kraken_fight():
+    if fight_monster(enemy_kraken) == True:
+        print("WINNER WINNER CHICKEN DINNER!")
+    else:
+        print("You wake up a bit disorientated in your own bed with a vague memory of fighting the Kraken.")
+        print("You find a note that reads 'Don't be so stupid in future, leave the leviathon alone'.")
+        stats["money"] = 0
+        current_place = places["Home"]
+
+
 
 
 def is_valid_exit(exits, chosen_exit):
@@ -403,6 +418,8 @@ def menu(exits, room_items, inv_items):
     # Normalise the input
     normalised_user_input = normalise_input(user_input)
 
+    os.system('cls' if os.name == 'nt' else 'clear')
+
     return normalised_user_input
 
 
@@ -492,8 +509,6 @@ def main():
 
         # Execute the player's command
         execute_command(command)
-        print()
-        print("--------------------------------------------------")
 
 
 
