@@ -65,22 +65,6 @@ def print_room_items(room):
     pass
 
 
-def print_inventory_items(items):
-    """This function takes a list of inventory items and displays it nicely, in a
-    manner similar to print_room_items(). The only difference is in formatting:
-    print "You have ..." instead of "There is ... here.". For example:
-
-    >>> print_inventory_items(inventory)
-    You have id card, laptop, money.
-    <BLANKLINE>
-
-    """
-    if len(items) > 0:
-        print("You have " + list_of_items(items) + ".")
-        print("")
-    pass
-
-
 def print_room(room):
     """This function takes a room as an input and nicely displays its name
     and description. The room argument is a dictionary with entries "name",
@@ -171,7 +155,7 @@ def print_exit(direction, leads_to):
     print("GO " + direction.upper() + " to " + leads_to + ".")
 
 
-def print_menu(exits, room_items, inv_items):
+def print_menu(exits, room_items):
     """This function displays the menu of available actions to the player. The
     argument exits is a dictionary of exits as exemplified in map.py. The
     arguments room_items and inv_items are the items lying around in the room
@@ -209,21 +193,31 @@ def print_menu(exits, room_items, inv_items):
         print()
         for direction in exits:
             print_exit(direction, exit_leads_to(exits, direction))
-        for item in room_items:
-            print("TAKE " + item["id"] + " to take " + item["name"] + ".")
-        for item in inv_items:
-            print("DROP " + item["id"] + " to drop " + item["name"] + ".")
         if current_place["battle"] == True:
             print("Explore the local area.")
         if current_place == places["Gym"]:
             print("Train strength, defence or speed for a cost of 25 gold per stat?")
+        if current_place == places["Weapons"] or current_place == places["Armour"]:
+            for item in room_items:
+                print("BUY " + item["id"] + " for " + str(item["value"]) + ".")
+            if weapon[0] != weapon_nothing:
+                value = (weapon[0]["value"] * 0.6) % 1
+                print("SELL " + weapon[0]["id"] + " for " + str(int((weapon[0]["value"] * 0.6) - value)) + ".")
+            if armour[0] != armour_nothing:
+                value = (armour[0]["value"] * 0.6) % 1
+                print("SELL " + armour[0]["id"] + " for " + str(int((armour[0]["value"] * 0.6) - value)) + ".")
         print()
         print("What do you want to do?")
 
 
 def kraken_fight():
     if fight_monster(enemy_kraken) == True:
-        print("WINNER WINNER CHICKEN DINNER!")
+        print("                             _____   ___    ")
+        print("\         / | |\   | |\   | |       |   \  |")
+        print(" \   ^   /  | | \  | | \  | |___    |___/  |")
+        print("  \ / \ /   | |  \ | |  \ | |       |   \  |")
+        print("   V   V    | |   \| |   \| |_____  |    \ .")
+        print("    ")
     else:
         print("You wake up a bit disorientated in your own bed with a vague memory of fighting the Kraken.")
         print("You find a note that reads 'Don't be so stupid in future, leave the leviathon alone'.")
@@ -275,31 +269,75 @@ def execute_take(item_id):
     """
     for item in current_place["items"]:
         if item["id"] == item_id:
-            print(stats["mass"])
-            if (stats["mass"] + item["mass"]) <= (stats["strength"] / 5):
-                stats["mass"] =+ item["mass"]
-                inventory.append(item)
-                current_place["items"].remove(item)
-                return
+            if stats["money"] >= item["value"]:
+                if item["type"] == "W":
+                    if weapon[0] != weapon_nothing:
+                        print("You need to sell your current weapon first.")
+                    else:
+                        weapon_update(item_id, item)
+                else:
+                    if armour[0] != armour_nothing:
+                        print("You need to sell your current armour first.")
+                    else:
+                        armour_update(item_id, item)
             else:
-                print("The weight is too much, try dropping someting.")
+                print("You don't have enough money for that.")
                 return
     print("That isn't in the room.")
     pass
-    
+
+def weapon_update(item_id, item):
+    global weapon
+    if (stats["mass"] + item["mass"]) <= (stats["strength"] / 5):                
+        stats["mass"] =+ item["mass"]
+        stats["money"] = stats["money"] - item["value"]
+        weapon[0] = item
+        current_place["items"].remove(item)
+        print("You now have " + str(stats["money"]) + " money.")
+        return
+    else:
+        print("The weight is too much, try dropping someting.")
+        return
+
+
+def armour_update(item_id, item):
+    global armour
+    if (stats["mass"] + item["mass"]) <= (stats["strength"] / 5):                
+        stats["mass"] =+ item["mass"]
+        stats["money"] = stats["money"] - item["value"]
+        armour[0] = item
+        current_place["items"].remove(item)
+        print("You now have " + str(stats["money"]) + " money.")
+        return
+    else:
+        print("The weight is too much, try dropping someting.")
+        return
 
 def execute_drop(item_id):
     """This function takes an item_id as an argument and moves this item from the
     player's inventory to list of items in the current room. However, if there is
     no such item in the inventory, this function prints "You cannot drop that."
     """
-    for item in inventory:
-        if item["id"] == item_id:
-            stats["mass"] =- item["mass"] 
-            current_place["items"].append(item)
-            inventory.remove(item)
-            return
-    print("You don't have that to drop it.")
+    global weapon
+    global armour
+    if weapon[0]["id"] == item_id:
+        stats["mass"] =- weapon[0]["mass"] 
+        value = (weapon[0]["value"] * 0.6) % 1
+        stats["money"] = stats["money"] + int((weapon[0]["value"] * 0.6) - value)
+        current_place["items"].append(weapon[0])
+        weapon[0] = weapon_nothing
+        print("You now have " + str(stats["money"]) + " money.")
+        return
+    elif armour[0]["id"] == item_id:
+        stats["mass"] =- armour[0]["mass"] 
+        value = (armour[0]["value"] * 0.6) % 1
+        stats["money"] = stats["money"] + int((armour[0]["value"] * 0.6) - value)
+        current_place["items"].append(armour[0])
+        armour[0] = armour_nothing
+        print("You now have " + str(stats["money"]) + " money.")
+        return
+    else:
+        print("You don't have that to drop it.")
     pass
 
 def execute_explore():
@@ -345,17 +383,17 @@ def execute_command(command):
         else:
             print("Go where?")
 
-    elif command[0] == "take":
+    elif command[0] == "buy":
         if len(command) > 1:
             execute_take(command[1])
         else:
-            print("Take what?")
+            print("buy what?")
 
-    elif command[0] == "drop":
+    elif command[0] == "sell":
         if len(command) > 1:
             execute_drop(command[1])
         else:
-            print("Drop what?")
+            print("sell what?")
     elif command[0] == "explore" and current_place["battle"] == True:
         execute_explore()
     elif command[0] == "train" and current_place == places["Gym"]:
@@ -378,14 +416,16 @@ def fight_monster(enemy):
         counter = counter + 1
         if enemy_speed > player_speed:
             e_counter = e_counter + 1
-            if (enemy["strength"] - stats["defence"]) > 0:
-                p_health = p_health - (enemy["strength"] - stats["defence"])
-                print(enemy["name"] + " hits you for " + str((enemy["strength"] - stats["defence"])) + " damage. You have " + str(p_health) + " health remaining.")
+            damage = enemy["strength"] - stats["defence"] - armour[0]["defence"]
+            if damage > 0:
+                p_health = p_health - damage
+                print(enemy["name"] + " hits you for " + str(damage) + " damage. You have " + str(p_health) + " health remaining.")
         else:
             p_counter = p_counter + 1
-            if (stats["strength"] - enemy["defence"]) > 0:
-                e_health = e_health - (stats["strength"] - enemy["defence"])
-                print("You hit the enemy for " + str((stats["strength"] - enemy["defence"])) + " damage. The enemy has " + str(e_health) + " health remaining.")
+            damage = (stats["strength"] - enemy["defence"] + weapon[0]["damage"])
+            if damage > 0:
+                e_health = e_health - damage
+                print("You hit the enemy for " + str(damage) + " damage. The enemy has " + str(e_health) + " health remaining.")
         if counter == 101:
             print("The fight takes it's toll on both of you and you just lie there bleeding out, but who will bleed out quicker?")
             if p_counter > e_counter:
@@ -400,7 +440,7 @@ def fight_monster(enemy):
 
 
 
-def menu(exits, room_items, inv_items):
+def menu(exits, room_items):
     """This function, given a dictionary of possible exits from a room, and a list
     of items found in the room and carried by the player, prints the menu of
     actions using print_menu() function. It then prompts the player to type an
@@ -410,7 +450,7 @@ def menu(exits, room_items, inv_items):
     """
 
     # Display menu
-    print_menu(exits, room_items, inv_items)
+    print_menu(exits, room_items)
 
     # Read player's input
     user_input = input("> ")
@@ -502,10 +542,9 @@ def main():
     while True:
         # Display game status (room description, inventory etc.)
         print_room(current_place)
-        print_inventory_items(inventory)
 
         # Show the menu with possible actions and ask the player
-        command = menu(current_place["exits"], current_place["items"], inventory)
+        command = menu(current_place["exits"], current_place["items"])
 
         # Execute the player's command
         execute_command(command)

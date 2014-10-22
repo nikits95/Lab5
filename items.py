@@ -10,7 +10,11 @@ weapon_dagger = {
 
     "mass": 1.0,
 
-    "damage": 10
+    "damage": 10,
+
+    "value": 30,
+
+    "type": "W"
 }
 
 weapon_sword = {
@@ -23,7 +27,11 @@ weapon_sword = {
 
     "mass": 2.5,
 
-    "damage": 25
+    "damage": 25,
+
+    "value": 60,
+
+    "type": "W"
 }
 
 weapon_2hand = {
@@ -36,7 +44,11 @@ weapon_2hand = {
 
     "mass": 3.5,
 
-    "damage": 35
+    "damage": 35,
+
+    "value": 100,
+
+    "type": "W"
 }
 
 weapon_hammer = {
@@ -49,7 +61,11 @@ weapon_hammer = {
 
     "mass": 3.0,
 
-    "damage": 30
+    "damage": 30,
+
+    "value": 80,
+
+    "type": "W"
 }
 
 weapon_spear = {
@@ -62,7 +78,11 @@ weapon_spear = {
 
     "mass": 2.5,
 
-    "damage": 25
+    "damage": 25,
+
+    "value": 55,
+
+    "type": "W"
 }
 
 weapon_bow = {
@@ -75,7 +95,11 @@ weapon_bow = {
 
     "mass": 1.5,
 
-    "damage": 15
+    "damage": 15,
+
+    "value": 20,
+
+    "type": "W"
 }
 
 weapon_justicesword = {
@@ -88,8 +112,28 @@ weapon_justicesword = {
 
     "mass": 20.0,
 
-    "damage": 350
+    "damage": 350,
+
+    "value": 1000,
+
+    "type": "W"
     #sword required to kill the Kraken
+}
+
+weapon_nothing = {
+    "id": "Nothing",
+
+    "name": "Nothing",
+
+    "description": "",
+
+    "mass": 0.0,
+
+    "damage": 0,
+
+    "value": 0,
+
+    "type": "W"
 }
 #Armour
 
@@ -102,7 +146,11 @@ armour_halfhelm = {
 
     "mass": 1.0,
 
-    "defence": 10
+    "defence": 10,
+
+    "value": 10,
+
+    "type": "A"
 }
 
 armour_chain = {
@@ -114,7 +162,11 @@ armour_chain = {
 
     "mass": 2.5,
 
-    "defence": 25
+    "defence": 25,
+
+    "value": 10,
+
+    "type": "A"
 }
 
 armour_plate = {
@@ -126,7 +178,11 @@ armour_plate = {
 
     "mass": 5.0,
 
-    "defence": 50
+    "defence": 50,
+
+    "value": 10,
+
+    "type": "A"
 }
 
 armour_ironhelmet = {
@@ -138,7 +194,11 @@ armour_ironhelmet = {
 
     "mass": 4.0,
 
-    "defence": 40
+    "defence": 40,
+
+    "value": 10,
+
+    "type": "A"
 }
 
 armour_ironchestplate = {
@@ -150,7 +210,11 @@ armour_ironchestplate = {
 
     "mass": 2.0,
 
-    "defence": 20
+    "defence": 20,
+
+    "value": 10,
+
+    "type": "A"
 }
 
 armour_ironleggings = {
@@ -162,7 +226,11 @@ armour_ironleggings = {
 
     "mass": 1.0,
 
-    "defence": 10
+    "defence": 10,
+
+    "value": 10,
+
+    "type": "A"
 }
 
 armour_ironboots = {
@@ -174,7 +242,11 @@ armour_ironboots = {
 
     "mass": 3.0,
 
-    "defence": 30
+    "defence": 30,
+
+    "value": 10,
+
+    "type": "A"
 }
 
 armour_justice = {
@@ -186,9 +258,29 @@ armour_justice = {
 
     "mass": 15.0,
 
-    "defence": 400
+    "defence": 400,
+
+    "value": 10,
+
+    "type": "A"
 
     #required to defeat the kraken
+}
+
+armour_nothing = {
+    "id": "Nothing",
+
+    "name": "Nothing",
+
+    "description": "",
+
+    "mass": 0.0,
+
+    "defence": 0,
+
+    "value": 0,
+
+    "type": "A"
 }
 
 items_list = {

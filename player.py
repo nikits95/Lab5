@@ -1,7 +1,7 @@
 from items import *
 from map import places
-
-inventory = []
+weapon = [weapon_dagger]
+armour = [armour_nothing]
 
 stats = {
 	"health": 100,
@@ -14,12 +14,11 @@ stats = {
 
 	"mass": 0.0,
 
-	"money": 0
+	"money": 100
 }
 
 current_place = places["Home"]
 
-#Sort out items weights.
 #Sort out paying for items subfunction
 #Random item finds.
 #Arena
