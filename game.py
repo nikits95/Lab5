@@ -213,7 +213,7 @@ def print_menu(exits, room_items, inv_items):
     if current_place["battle"] == True:
         print("Explore the local area.")
     if current_place == places["Gym"]:
-        print("Train strength, defence or speed.")
+        print("Train strength, defence or speed for a cost of 25 gold per stat?")
     print()
     print("What do you want to do?")
 
@@ -288,22 +288,34 @@ def execute_drop(item_id):
     pass
 
 def execute_explore():
-    #Random encounters for either battling or finding items.
+    global current_place
     print("explore " + current_place["name"])
     if random.randrange(1, 6, 1) < 5:
-        enemy = enemy_list[random.randrange(1, len(enemy_list), 1)]
+        enemy = enemy_list[random.randrange(1, len(enemy_list) - 1, 1)]
         print("You encounter a random " + enemy["name"])
         result = fight_monster(enemy)
+        print("")
+        print("You had " + str(stats["money"]) + " gold.")
         if result == True:
-            print("You slay the " + enemy["name"] + ".")
+            print("You slay the " + enemy["name"] + " and take some money you find near it.")
+            stats["money"] = stats["money"] + random.randrange(1, enemy["money"], 1)
         else:
-            print("The " + enemy["name"] + " fucking batters you bro, you suck.")
+            print("You wake up a bit disorientated in your own bed.")
+            print("You have a message that reads 'I found you passed out and bleeding, I looked after you but took payment for this from your possesions.")
+            stats["money"] = 0
+            current_place = places["Home"]
     else:
         print("You find a random ")
+    print("You now have " + str(stats["money"]) + " gold.")
 
     
 def execute_train(stat):
-    stats[stat] = stats[stat] + 5
+    if stats["money"] >= 25:
+        stats["money"] = stats["money"] - 25 
+        stats[stat] = stats[stat] + 1
+        print("You now have " + str(stats[stat]) + " " + stat + " and " + str(stats["money"]) + " money.")
+    else:
+        print("You don't have enough gold, get out of here.")
 
 def execute_command(command):
     """This function takes a command (a list of words as returned by
@@ -329,9 +341,9 @@ def execute_command(command):
             execute_drop(command[1])
         else:
             print("Drop what?")
-    elif command[0] == "explore":
+    elif command[0] == "explore" and current_place["battle"] == True:
         execute_explore()
-    elif command[0] == "train":
+    elif command[0] == "train" and current_place == places["Gym"]:
         if len(command) > 1:
             execute_train(command[1])
         else:
@@ -353,12 +365,12 @@ def fight_monster(enemy):
             e_counter = e_counter + 1
             if (enemy["strength"] - stats["defence"]) > 0:
                 p_health = p_health - (enemy["strength"] - stats["defence"])
-                print("Player: " + str(p_health))
+                print(enemy["name"] + " hits you for " + str((enemy["strength"] - stats["defence"])) + " damage. You have " + str(p_health) + " health remaining.")
         else:
             p_counter = p_counter + 1
             if (stats["strength"] - enemy["defence"]) > 0:
                 e_health = e_health - (stats["strength"] - enemy["defence"])
-                print("Enemy: " + str(e_health))
+                print("You hit the enemy for " + str((stats["strength"] - enemy["defence"])) + " damage. The enemy has " + str(e_health) + " health remaining.")
         if counter == 101:
             print("The fight takes it's toll on both of you and you just lie there bleeding out, but who will bleed out quicker?")
             if p_counter > e_counter:
