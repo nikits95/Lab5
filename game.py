@@ -344,7 +344,7 @@ def execute_explore():
     global current_place
     print("explore " + current_place["name"])
     if random.randrange(1, 6, 1) < 5:
-        enemy = enemy_list[random.randrange(1, len(enemy_list) - 1, 1)]
+        enemy = enemy_calculator()
         print("You encounter a random " + enemy["name"])
         result = fight_monster(enemy)
         print("")
@@ -360,6 +360,25 @@ def execute_explore():
     else:
         print("You find a random ")
     print("You now have " + str(stats["money"]) + " gold.")
+
+
+def enemy_calculator():
+    if current_place == places["Stream"]:
+        enemy = enemy_list[random.randrange(1, 7, 1)]
+    elif current_place == places["Forest"]:
+        enemy = enemy_list[random.randrange(6, 15, 1)]
+    elif current_place == places["Lake"]:
+        enemy = enemy_list[random.randrange(6, 28, 1)]
+    elif current_place == places["Caves"]:
+        enemy = enemy_list[random.randrange(15, 28, 1)]
+    elif current_place == places["Knight"]:
+        enemy = enemy_list[random.randrange(15, 41, 1)]
+    elif current_place == places["Goblin"]:
+        enemy = enemy_list[random.randrange(28, 41, 1)]
+    elif current_place == places["Deeper"]:
+        enemy = enemy_list[random.randrange(41, 50, 1)]
+    return enemy
+    
 
     
 def execute_train(stat):

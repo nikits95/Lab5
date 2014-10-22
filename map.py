@@ -286,12 +286,12 @@ places = {
     "Leaderboard": place_leaderboard,
     "Battle": place_battle,
     "Weapons": place_weapons,
-    "Caves": place_caves,
+    "Caves": place_caves, 
     "Stream": place_stream,
     "Deeper": place_deeper,
-    "Lake": place_lake,
+    "Lake": place_lake, 
     "Lair": place_lair,
     "Gut": place_gutfeel,
-    "Knight": place_knight,
-    "Goblin": place_goblin
+    "Knight": place_knight, 
+    "Goblin": place_goblin 
 }

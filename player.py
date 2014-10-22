@@ -19,7 +19,6 @@ stats = {
 
 current_place = places["Home"]
 
-#Sort out paying for items subfunction
 #Random item finds.
 #Arena
 #The map, Items in places.
@@ -30,7 +29,6 @@ current_place = places["Home"]
 
 #Health Change?
 #Game Timer?
-#Visual map?
 #Speed to weight downside?
 #Misc Items?
 #Maybe experience?

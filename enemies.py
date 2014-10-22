@@ -3,17 +3,17 @@ from items import *
 enemy_giantspider = {
 	"name" : "Giant Spider",
 
-	"health" : 50,
+	"health" : 110,
 
-	"strength" : 20,
+	"strength" : 33,
 
-	"defence" : 5,
+	"defence" : 34,
 
-	"speed" : 10,
+	"speed" : 35,
 
-	"reward" : weapon_2hand,
+	"reward" : "",
 
-	"money" : 30
+	"money" : 46
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -21,17 +21,17 @@ enemy_giantspider = {
 enemy_goblin = {
 	"name" : "Goblin",
 
-	"health" : 5,
+	"health" : 80,
 
-	"strength" : 10,
+	"strength" : 24,
 
-	"defence" : 5,
+	"defence" : 23,
 
-	"speed" : 15,
+	"speed" : 19,
 
-	"reward" : weapon_dagger,
+	"reward" : "",
 
-	"money" : 10
+	"money" : 31
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -39,17 +39,17 @@ enemy_goblin = {
 enemy_chiefgoblin = {
 	"name" : "Chief Goblin",
 
-	"health" : 30,
+	"health" : 110,
 
-	"strength" : 10,
+	"strength" : 30,
 
 	"defence" : 35,
 
-	"speed" : 20,
+	"speed" : 34,
 
-	"reward" : weapon_2hand,
+	"reward" : "",
 
-	"money" : 30
+	"money" : 42
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -57,17 +57,17 @@ enemy_chiefgoblin = {
 enemy_knight = {
 	"name" : "Knight",
 
-	"health" : 20,
+	"health" : 110,
 
-	"strength" : 10,
+	"strength" : 29,
 
-	"defence" : 15,
+	"defence" : 36,
 
-	"speed" : 30,
+	"speed" : 36,
 
-	"reward" : weapon_sword,
+	"reward" : "",
 
-	"money" : 20
+	"money" : 40
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -76,17 +76,17 @@ enemy_knight = {
 enemy_gladiator = {
 	"name" : "Gladiator",
 
-	"health" : 40,
+	"health" : 150,
 
-	"strength" : 20,
+	"strength" : 58,
 
-	"defence" : 25,
+	"defence" : 60,
 
-	"speed" : 50,
+	"speed" : 49,
 
-	"reward" : weapon_dagger,
+	"reward" : "",
 
-	"money" : 30
+	"money" : 75
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -94,17 +94,17 @@ enemy_gladiator = {
 enemy_minihydra = {
 	"name" : "Mini Hydra",
 
-	"health" : 50,
+	"health" : 150,
 
-	"strength" : 40,
+	"strength" : 61,
 
-	"defence" : 5,
+	"defence" : 59,
 
-	"speed" : 5,
+	"speed" : 48,
 
-	"reward" : weapon_dagger,
+	"reward" : "",
 
-	"money" : 100
+	"money" : 76
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -112,17 +112,17 @@ enemy_minihydra = {
 enemy_giantrat = {
 	"name" : "Giant Rat",
 
-	"health" : 30,
+	"health" : 80,
 
-	"strength" : 20,
+	"strength" : 26,
 
-	"defence" : 25,
+	"defence" : 22,
 
-	"speed" : 20,
+	"speed" : 18,
 
 	"reward" : "",
 
-	"money" : 25
+	"money" : 29
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -130,17 +130,17 @@ enemy_giantrat = {
 enemy_wildbear = {
 	"name" : "Wild Bear",
 
-	"health" : 30,
+	"health" : 80,
 
-	"strength" : 50,
+	"strength" : 25,
 
-	"defence" : 5,
+	"defence" : 19,
 
-	"speed" : 10,
+	"speed" : 20,
 
 	"reward" : "",
 
-	"money" : 35
+	"money" : 30
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -184,17 +184,17 @@ enemy_boar = {
 enemy_owlbear = {
 	"name" : "Owlbear",
 
-	"health" : 40,
+	"health" : 80,
 
-	"strength" : 20,
+	"strength" : 24,
 
-	"defence" : 50,
+	"defence" : 20,
 
-	"speed" : 10,
+	"speed" : 21,
 
-	"reward" : weapon_2hand,
+	"reward" : "",
 
-	"money" : 75
+	"money" : 27
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -222,15 +222,15 @@ enemy_spider = {
 
 	"health" : 60,
 
-	"strength" : 10,
+	"strength" : 17,
 
-	"defence" : 15,
+	"defence" : 10,
 
-	"speed" : 10,
+	"speed" : 11,
 
 	"reward" : "",
 
-	"money" : 30
+	"money" : 15
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -238,17 +238,17 @@ enemy_spider = {
 enemy_beastmen = {
 	"name" : "Beastmen",
 
-	"health" : 30,
+	"health" : 80,
 
-	"strength" : 20,
+	"strength" : 25,
 
-	"defence" : 5,
+	"defence" : 23,
 
-	"speed" : 10,
+	"speed" : 19,
 
-	"reward" : armour_ironchestplate,
+	"reward" : "",
 
-	"money" : 30
+	"money" : 29
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -256,17 +256,17 @@ enemy_beastmen = {
 enemy_wildwolf = {
 	"name" : "Wild Wolf",
 
-	"health" : 10,
+	"health" : 60,
 
-	"strength" : 20,
+	"strength" : 16,
 
-	"defence" : 5,
+	"defence" : 11,
 
-	"speed" : 80,
+	"speed" : 13,
 
 	"reward" : "",
 
-	"money" : 30
+	"money" : 12
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -310,81 +310,81 @@ enemy_kraken = {
 enemy_ghoul = {
 	"name" : "Ghoul",
 
-	"health" : 30,
+	"health" : 110,
 
-	"strength" : 10,
+	"strength" : 32,
 
-	"defence" : 50,
+	"defence" : 33,
 
-	"speed" : 20,
+	"speed" : 37,
 
 	"reward" : "",
 
-	"money" : 50
+	"money" : 41
 }
 
 enemy_orc = {
 	"name" : "Orc",
 
-	"health" : 50,
+	"health" : 80,
 
-	"strength" : 20,
+	"strength" : 23,
 
-	"defence" : 50,
+	"defence" : 24,
 
-	"speed" : 5,
+	"speed" : 19,
 
 	"reward" : "",
 
-	"money" : 70
+	"money" : 32
 }
 
 enemy_cyclops = {
 	"name" : "Cyclops",
 
-	"health" : 75,
+	"health" : 110,
 
-	"strength" : 70,
+	"strength" : 35,
 
-	"defence" : 30,
+	"defence" : 34,
 
-	"speed" : 10,
+	"speed" : 35,
 
 	"reward" : "",
 
-	"money" : 100
+	"money" : 40
 }
 
 enemy_groupwolf = {
 	"name" : "Group of Hungry Wolfs",
 
-	"health" : 100,
+	"health" : 80,
 
-	"strength" : 50,
+	"strength" : 23,
 
-	"defence" : 10,
+	"defence" : 21,
 
-	"speed" : 80,
+	"speed" : 22,
 
 	"reward" : "",
 
-	"money" : 100
+	"money" : 33
 }
 
 enemy_ogres = {
 	"name" : "Ogres",
 
-	"health" : 70,
+	"health" : 110,
 
-	"strength" : 50,
+	"strength" : 33,
 
-	"defence" : 20,
+	"defence" : 36,
 
-	"speed" : 10,
+	"speed" : 37,
 
 	"reward" : "",
 
-	"money" : 75
+	"money" : 39
 }
 
 enemy_babyminotaurs = {
@@ -406,93 +406,93 @@ enemy_babyminotaurs = {
 enemy_chiefminotaurs = {
 	"name" : "Chief Minotaurs",
 
-	"health" : 70,
+	"health" : 150,
 
-	"strength" : 70,
+	"strength" : 58,
 
-	"defence" : 50,
+	"defence" : 61,
 
-	"speed" : 10,
+	"speed" : 52,
 
 	"reward" : "",
 
-	"money" : 75
+	"money" : 73
 }
 
 enemy_werewovles = {
 	"name" : "Werewovles",
 
-	"health" : 70,
+	"health" : 150,
 
-	"strength" : 40,
+	"strength" : 60,
 
-	"defence" : 10,
+	"defence" : 58,
 
-	"speed" : 50,
+	"speed" : 48,
 
 	"reward" : "",
 
-	"money" : 50
+	"money" : 85
 }
 
 enemy_hugeants = {
 	"name" : "Huge Ants",
 
-	"health" : 10,
+	"health" : 80,
 
-	"strength" : 20,
+	"strength" : 24,
 
-	"defence" : 10,
+	"defence" : 22,
 
-	"speed" : 50,
+	"speed" : 21,
+
+	"reward" : "",
+
+	"money" : 34
+}
+
+enemy_evilmonk = {
+	"name" : "Evil Monk",
+
+	"health" : 110,
+
+	"strength" : 31,
+
+	"defence" : 37,
+
+	"speed" : 36,
 
 	"reward" : "",
 
 	"money" : 45
 }
 
-enemy_evilmonk = {
-	"name" : "Evil Monk",
-
-	"health" : 20,
-
-	"strength" : 20,
-
-	"defence" : 10,
-
-	"speed" : 20,
-
-	"reward" : "",
-
-	"money" : 30
-}
-
 enemy_centipede = {
 	"name" : "Vicious Centipede",
 
-	"health" : 40,
+	"health" : 60,
 
-	"strength" : 20,
+	"strength" : 18,
 
-	"defence" : 20,
+	"defence" : 11,
 
-	"speed" : 5,
+	"speed" : 12,
 
 	"reward" : "",
 
-	"money" : 20
+	"money" : 14
 }
 
 enemy_arachnoid = {
 	"name" : "Arachnoid",
 
-	"health" : 50,
+	"health" : 80,
 
-	"strength" : 10,
+	"strength" : 25,
 
-	"defence" : 10,
+	"defence" : 19,
 
-	"speed" : 30,
+	"speed" : 23,
 
 	"reward" : "",
 
@@ -502,65 +502,65 @@ enemy_arachnoid = {
 enemy_serpent = {
 	"name" : "Serpent",
 
-	"health" : 30,
+	"health" : 60,
 
-	"strength" : 30,
+	"strength" : 20,
 
-	"defence" : 10,
+	"defence" : 8,
 
-	"speed" : 60,
+	"speed" : 12,
 
 	"reward" : "",
 
-	"money" : 50
+	"money" : 16
 }
 
 enemy_barghest = {
 	"name" : "Barghest",
 
-	"health" : 50,
+	"health" : 110,
 
-	"strength" : 10,
+	"strength" : 31,
 
-	"defence" : 10,
+	"defence" : 38,
 
-	"speed" : 30,
+	"speed" : 40,
 
 	"reward" : "",
 
-	"money" : 30
+	"money" : 46
 }
 
 enemy_worgen = {
 	"name" : "Worgen",
 
-	"health" : 60,
+	"health" : 150,
 
-	"strength" : 10,
+	"strength" : 58,
 
-	"defence" : 30,
-
-	"speed" : 30,
-
-	"reward" : "",
-
-	"money" : 50
-}
-
-enemy_manticore = {
-	"name" : "Manticore",
-
-	"health" : 60,
-
-	"strength" : 40,
-
-	"defence" : 20,
+	"defence" : 59,
 
 	"speed" : 50,
 
 	"reward" : "",
 
-	"money" : 100
+	"money" : 87
+}
+
+enemy_manticore = {
+	"name" : "Manticore",
+
+	"health" : 150,
+
+	"strength" : 55,
+
+	"defence" : 59,
+
+	"speed" : 51,
+
+	"reward" : "",
+
+	"money" : 78
 }
 
 enemy_possvillagers = {
@@ -582,65 +582,65 @@ enemy_possvillagers = {
 enemy_darkelves = {
 	"name" : "Dark Elves",
 
-	"health" : 20,
+	"health" : 80,
 
-	"strength" : 20,
+	"strength" : 24,
 
-	"defence" : 20,
+	"defence" : 23,
 
 	"speed" : 20,
 
 	"reward" : "",
 
-	"money" : 20
+	"money" : 28
 }
 
 enemy_frogzard = {
 	"name" : "Frogzard",
 
-	"health" : 30,
+	"health" : 60,
 
-	"strength" : 10,
+	"strength" : 19,
 
-	"defence" : 20,
+	"defence" : 9,
 
-	"speed" : 20,
+	"speed" : 13,
 
 	"reward" : "",
 
-	"money" : 20
+	"money" : 15
 }
 
 enemy_mantik = {
 	"name" : "Mantik",
 
-	"health" : 20,
+	"health" : 110,
 
-	"strength" : 10,
+	"strength" : 35,
 
-	"defence" : 50,
+	"defence" : 34,
 
-	"speed" : 20,
+	"speed" : 38,
 
 	"reward" : "",
 
-	"money" : 50
+	"money" : 45
 }
 
 enemy_rat = {
 	"name" : "Rat",
 
-	"health" : 20,
+	"health" : 60,
 
-	"strength" : 20,
+	"strength" : 17,
 
-	"defence" : 10,
+	"defence" : 11,
 
-	"speed" : 20,
+	"speed" : 14,
 
 	"reward" : "",
 
-	"money" : 20
+	"money" : 15
 }
 
 enemy_crab = {
@@ -662,177 +662,177 @@ enemy_crab = {
 enemy_giantcrab = {
 	"name" : "Giant Poisonous Crab",
 
-	"health" : 40,
+	"health" : 150,
 
-	"strength" : 80,
+	"strength" : 57,
 
-	"defence" : 20,
+	"defence" : 56,
 
-	"speed" : 10,
+	"speed" : 48,
 
 	"reward" : "",
 
-	"money" : 100
+	"money" : 76
 }
 
 enemy_groupgoblin = {
 	"name" : "Group of Goblins",
 
-	"health" : 70,
+	"health" : 80,
 
-	"strength" : 60,
+	"strength" : 23,
 
-	"defence" : 50,
+	"defence" : 22,
 
-	"speed" : 30,
+	"speed" : 22,
 
 	"reward" : "",
 
-	"money" : 100
+	"money" : 27
 }
 
 enemy_twinserpent = {
 	"name" : "Twin-Headed Serpent",
 
-	"health" : 80,
+	"health" : 110,
 
-	"strength" : 60,
+	"strength" : 34,
 
-	"defence" : 40,
+	"defence" : 35,
 
-	"speed" : 70,
+	"speed" : 36,
 
 	"reward" : "",
 
-	"money" : 100
+	"money" : 48
 }
 
 enemy_phoenix = {
 	"name" : "Phoenix",
 
-	"health" : 20,
+	"health" : 150,
 
-	"strength" : 60,
+	"strength" : 58,
 
-	"defence" : 10,
+	"defence" : 57,
 
-	"speed" : 90,
+	"speed" : 53,
 
 	"reward" : "",
 
-	"money" : 75
+	"money" : 79
 }
 
 enemy_wraith = {
 	"name" : "Wraith",
 
-	"health" : 30,
+	"health" : 110,
 
-	"strength" : 60,
+	"strength" : 37,
 
-	"defence" : 10,
+	"defence" : 33,
 
-	"speed" : 10,
+	"speed" : 38,
 
 	"reward" : "",
 
-	"money" : 60
+	"money" : 47
 }
 
 enemy_bugbear = {
-	"name" : "Wraith",
+	"name" : "Bug Bear",
 
-	"health" : 30,
+	"health" : 60,
 
-	"strength" : 50,
+	"strength" : 17,
 
-	"defence" : 40,
+	"defence" : 10,
 
-	"speed" : 10,
+	"speed" : 12,
 
 	"reward" : "",
 
-	"money" : 70
+	"money" : 14
 }
 
 enemy_giantorc = {
 	"name" : "Giant Orc",
 
-	"health" : 100,
+	"health" : 80,
 
-	"strength" : 90,
+	"strength" : 24,
 
-	"defence" : 60,
+	"defence" : 20,
 
-	"speed" : 20,
+	"speed" : 19,
 
 	"reward" : "",
 
-	"money" : 150
+	"money" : 30
 }
 
 enemy_ettin = {
 	"name" : "Ettin",
 
-	"health" : 60,
+	"health" : 110,
 
-	"strength" : 20,
+	"strength" : 34,
 
-	"defence" : 10,
+	"defence" : 34,
 
-	"speed" : 10,
+	"speed" : 32,
 
 	"reward" : "",
 
-	"money" : 20
+	"money" : 46
 }
 
 enemy_griffons = {
 	"name" : "Griffons",
 
-	"health" : 40,
+	"health" : 110,
 
-	"strength" : 40,
+	"strength" : 35,
 
-	"defence" : 10,
+	"defence" : 31,
 
-	"speed" : 20,
+	"speed" : 38,
 
 	"reward" : "",
 
-	"money" : 50
+	"money" : 47
 }
 
 enemy_lich = {
 	"name" : "Lich",
 
-	"health" : 20,
+	"health" : 80,
 
-	"strength" : 20,
+	"strength" : 26,
 
-	"defence" : 10,
+	"defence" : 18,
 
-	"speed" : 10,
+	"speed" : 25,
 
 	"reward" : "",
 
-	"money" : 20
+	"money" : 29
 }
 
 enemy_lichking = {
 	"name" : "Lich King",
 
-	"health" : 50,
+	"health" : 200,
 
-	"strength" : 40,
+	"strength" : 65,
 
-	"defence" : 60,
+	"defence" : 64,
 
-	"speed" : 30,
+	"speed" : 60,
 
 	"reward" : "",
 
-	"money" : 50
+	"money" : 150
 }
 enemy_list = {
 	1 : enemy_snake,

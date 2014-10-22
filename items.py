@@ -283,6 +283,143 @@ armour_nothing = {
     "type": "A"
 }
 
+
+#Weapons
+
+weapon_bluntsword = {
+    "id": "bluntsword",
+
+    "name": "Blunt Wooden Sword",
+
+    "description":
+    "A blunt and non effective sword which is amlost broken. But it still hurts",
+
+    "mass": 0.2,
+
+    "damage": 2,
+
+    "value": 0,
+
+    "type": "W"
+}
+
+weapon_woodspear = {
+    "id": "woodspear",
+
+    "name": "Wooden Spear",
+
+    "description":
+    "A light spear but low durability..",
+
+    "mass": 0.5,
+
+    "damage": 5,
+
+    "value": 0,
+
+    "type": "W"
+}
+
+weapon_bluntknife = {
+    "id": "bluntknife",
+
+    "name": "Blunt Wooden Knife",
+
+    "description":
+    "A very light knife but very easily broken.",
+
+    "mass": 0.1,
+
+    "damage": 5,
+
+    "value": 0,
+
+    "type": "W"
+}
+
+weapon_brokenbow = {
+    "id": "brokenbow",
+
+    "name": "Damaged Bow",
+
+    "description":
+    "A damaged bow but can still be used agasint your enemies.",
+
+    "mass": 0.1,
+
+    "damage": 1,
+
+    "value": 0,
+
+    "type": "W"
+}
+
+#Armour
+
+armour_woodenboots = {
+    "id": "woodenboots",
+    
+    "name": "Wooden Boots",
+
+    "description": "A light piece of wooden boots that can protect you from weak attacks.",
+
+    "mass": 0.1,
+
+    "defence": 4,
+
+    "value": 0,
+
+    "type": "A"
+}
+
+armour_woodenleggings = {
+    "id": "woodenleggings",
+    
+    "name": "Wooden Leggings",
+
+    "description": "A light piece of wooden leggings that can protect you from weak enemies.",
+
+    "mass": 0.5,
+
+    "defence": 2,
+
+    "value": 0,
+
+    "type": "A"
+}
+
+armour_woodenhelmet = {
+    "id": "woodenhelmet",
+    
+    "name": "Wooden Helmet",
+
+    "description": "A light piece of wooden helmet that can protect you from weak attacks",
+
+    "mass": 0.3,
+
+    "defence": 0.3,
+
+    "value": 0,
+
+    "type": "A"
+}
+
+armour_woodenchestplate = {
+    "id": "ironchestplate",
+    
+    "name": "Wooden Chest Plate",
+
+    "description": "A light piece of wooden helmet that can protect your body from weak attacks.",
+
+    "mass": 0.2,
+
+    "defence": 4,
+
+    "value": 0,
+
+    "type": "A"
+}
+
 items_list = {
     1 : weapon_dagger,
     2 : weapon_sword,
@@ -298,5 +435,13 @@ items_list = {
     12 : armour_justice,
     13 : armour_ironchestplate,
     14 : armour_ironleggings,
-    15 : armour_ironboots
+    15 : armour_ironboots,
+    16 : weapon_bluntsword,
+    17 : weapon_woodspear,
+    18 : weapon_bluntknife,
+    19 : weapon_brokenbow,
+    20 : armour_woodenboots,
+    21 : armour_woodenleggings,
+    22 : armour_woodenhelmet,
+    23 : armour_woodenchestplate
 }
