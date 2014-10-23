@@ -197,13 +197,17 @@ def execute_take(item_id): #lets you buy and sell items in the shops if you have
                 if item["type"] == "W":
                     if weapon[0] != weapon_nothing:
                         print("You need to sell your current weapon first.")
+                        return
                     else:
                         weapon_update(item_id, item)
+                        return
                 else:
                     if armour[0] != armour_nothing:
                         print("You need to sell your current armour first.")
+                        return
                     else:
                         armour_update(item_id, item)
+                        return
             else:
                 print("You don't have enough money for that.")
                 return
