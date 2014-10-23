@@ -359,7 +359,7 @@ def execute_explore():
     global current_place
     global player_turns
     print("explore " + current_place["name"])
-    if random.randrange(1, 16, 1) > 15:
+    if random.randrange(1, 16, 1) < 15:
         enemy = enemy_calculator()
         print("You encounter a random " + enemy["name"])
         result = fight_monster(enemy)
