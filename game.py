@@ -571,6 +571,7 @@ def print_score():
         print('{:^80}'.format(pl.score + "  -  " + pl.name))
 
 
+
 # This is the entry point of our program
 def main():
 
