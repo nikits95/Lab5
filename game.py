@@ -10,17 +10,17 @@ import time
 import io
 import sys
 
-player_turns = 0
+player_turns = 0 #Variables needed for it to work out if those rooms have been visited and to keep track of player turns.
 Gut_room = False
 Knight_room = False
 
-class players:
+class players: #Used for scoreboard
     score = ""
     name = ""
 
 scores = []
 
-def list_of_items(items):
+def list_of_items(items): #Make a list of items into a string seperated by comma's
     string = ""
     for x in items:
         string = string + x["name"]
@@ -30,55 +30,54 @@ def list_of_items(items):
     pass
 
 
-def print_room_items(room):
+def print_room_items(room): # print all the items in a room if there are any
     if list_of_items(room["items"]) != "":
         print("There is " + list_of_items(room["items"]) + " here.")
         print("")
     pass
 
 
-def print_room(room):
+def print_room(room): #print the name of the room and the description.
     
     print()
     print(room["name"].upper())
     print()
     
-    if current_place != places["Knight"] or Knight_room == True:
-        if current_place != places["Gut"] or Gut_room == True:
+    if current_place != places["Knight"] or Knight_room == True: #Seperate descriptions for Knight/Gut room if they haven't
+        if current_place != places["Gut"] or Gut_room == True:   #been visited yet.
             print(room["description"])
             print()
-    if room == places["Leaderboard"]:
+    if room == places["Leaderboard"]: #If leaderboard room then prints scoreboard
         print_score()
         print()
-    print_room_items(room)
+    print_room_items(room) #Print all items in the room.
 
     
 
-def exit_leads_to(exits, direction):
+def exit_leads_to(exits, direction): #return list of possible exits
 
     return places[exits[direction]]["name"]
 
 
-def print_exit(direction, leads_to):
+def print_exit(direction, leads_to): #Prints exits
 
     print("GO " + direction.upper() + " to " + leads_to + ".")
 
 
-def print_menu(exits, room_items):
+def print_menu(exits, room_items): #Prints the menu
     
-    global current_place
-    global Knight_room
-    if current_place == places["Lair"]:
+    global current_place #Makes globale variables assignable in the function
+    if current_place == places["Lair"]: #If you are in the lair it fights Kraken automatically.
         kraken_fight()  
         current_place = places["Home"]
         print_menu(current_place["exits"], current_place["items"])
         return
-    if current_place == places["Gut"] and Gut_room == False:
+    if current_place == places["Gut"] and Gut_room == False: #If you are in Gut room for first time it fights the stranger
         if Gutroom() == False:
             current_place = places["Home"]
             print_menu(current_place["exits"], current_place["items"])
             return
-    if current_place == places["Knight"] and Knight_room == False:
+    if current_place == places["Knight"] and Knight_room == False:#If you are in Knight room for first time it fights the Knight.
         if Knight_Fight() == False:
             current_place = places["Home"]
             print_menu(current_place["exits"], current_place["items"])
@@ -87,13 +86,13 @@ def print_menu(exits, room_items):
     print("You can:")
     print()
 
-    for direction in exits:
+    for direction in exits: #prints exits
         print_exit(direction, exit_leads_to(exits, direction))
-    if current_place["battle"] == True:
+    if current_place["battle"] == True: #prints if you can battle or not
         print("Explore the local area.")
-    if current_place == places["Gym"]:
+    if current_place == places["Gym"]: #prints if you can train
         print("Train strength, defence or speed for a cost of 25 gold per stat?")
-    if current_place == places["Weapons"] or current_place == places["Armour"]:
+    if current_place == places["Weapons"] or current_place == places["Armour"]: #prints items for buy and sale and their power
         for item in room_items:
             if item["type"] == "W":
                 print("BUY " + item["id"] + " for " + str(item["value"]) + " with " + str(item["damage"]) + " damage.")
@@ -105,12 +104,12 @@ def print_menu(exits, room_items):
         if armour[0] != armour_nothing:
             value = (armour[0]["value"] * 0.6) % 1
             print("SELL " + armour[0]["id"] + " with " + str(armour[0]["defence"]) + " defence for " + str(int((armour[0]["value"] * 0.6) - value)) + ".")
-    if current_place == places["Battle"]:
+    if current_place == places["Battle"]: #prints arena option
         print("Fight the next Arena opponent!")
     print()
     print("What do you want to do?")
 
-def Knight_Fight():
+def Knight_Fight(): #runs the Knight room fight if you haven't been there before.
 
     print("Following the winding burnt stone walls of the cave you come to ") 
     print("an opening with large bones scattered across the floor. The bones look") 
@@ -131,7 +130,7 @@ def Knight_Fight():
         stats["money"] = 0
         return False
 
-def Gutroom():
+def Gutroom(): #Runs the Gut room fight if you haven't been there before.
     global Gut_room
     if stats["speed"] > 45 and stats["defence"] > 45:
         print("You follow your gut feeling down the hall, feeling more and more on edge.")
@@ -152,7 +151,7 @@ def Gutroom():
         stats["money"] = 0
         return False
 
-def kraken_fight():
+def kraken_fight(): #Runs the kraken fight with win condition if you end.
     if fight_monster(enemy_kraken) == True:
         print("                             _____   ___    ")
         print("\         / | |\   | |\   | |       |   \  |")
@@ -175,12 +174,12 @@ def kraken_fight():
 
 
 
-def is_valid_exit(exits, chosen_exit):
+def is_valid_exit(exits, chosen_exit): #Checks if valid exit.
     
     return chosen_exit in exits
 
 
-def execute_go(direction):
+def execute_go(direction): #moves you between rooms.
     
     global current_place
     if is_valid_exit(current_place["exits"], direction) == True:
@@ -190,8 +189,8 @@ def execute_go(direction):
     pass
 
 
-def execute_take(item_id):
-    
+def execute_take(item_id): #lets you buy and sell items in the shops if you have enough money and they don't weight too much
+                           #and if you don't have a weapon/armour already equipped.
     for item in current_place["items"]:
         if item["id"] == item_id:
             if stats["money"] >= item["value"]:
@@ -211,7 +210,7 @@ def execute_take(item_id):
     print("That isn't in the room.")
     pass
 
-def weapon_update(item_id, item):
+def weapon_update(item_id, item): #Equips new weapon and sorts out money.
     global weapon
     if (stats["mass"] + item["mass"]) <= (stats["strength"] / 5):                
         stats["mass"] =+ item["mass"]
@@ -225,7 +224,7 @@ def weapon_update(item_id, item):
         return
 
 
-def armour_update(item_id, item):
+def armour_update(item_id, item): #Equips new armour and sorts out money.
     global armour
     if (stats["mass"] + item["mass"]) <= (stats["strength"] / 5):                
         stats["mass"] =+ item["mass"]
@@ -238,7 +237,7 @@ def armour_update(item_id, item):
         print("The weight is too much, try dropping someting.")
         return
 
-def execute_drop(item_id):
+def execute_drop(item_id): #Allows you to sell your items back to the shops for 60% of the value.
     
     global weapon
     global armour
@@ -251,45 +250,45 @@ def execute_drop(item_id):
         print("You now have " + str(stats["money"]) + " money.")
         return
     elif armour[0]["id"] == item_id:
-        stats["mass"] =- armour[0]["mass"] 
-        value = (armour[0]["value"] * 0.6) % 1
-        stats["money"] = stats["money"] + int((armour[0]["value"] * 0.6) - value)
-        current_place["items"].append(armour[0])
-        armour[0] = armour_nothing
+        stats["mass"] =- armour[0]["mass"]  # removes the mass from you
+        value = (armour[0]["value"] * 0.6) % 1 
+        stats["money"] = stats["money"] + int((armour[0]["value"] * 0.6) - value) #works out your money back as a whole number.
+        current_place["items"].append(armour[0]) #puts item in shop
+        armour[0] = armour_nothing #gives you no item.
         print("You now have " + str(stats["money"]) + " money.")
         return
     else:
         print("You don't have that to drop it.")
     pass
 
-def execute_explore():
+def execute_explore(): #allows you to battle random enemies
     global current_place
     global player_turns
     print("explore " + current_place["name"])
-    if random.randrange(1, 16, 1) < 15:
-        enemy = enemy_calculator()
-        print("You encounter a random " + enemy["name"])
-        result = fight_monster(enemy)
+    if random.randrange(1, 16, 1) < 15: #sometimes find items instead of enemies.
+        enemy = enemy_calculator() #works out your enemy
+        print("You encounter a random " + enemy["name"]) 
+        result = fight_monster(enemy) # fights the enemy.
         print("")
         print("You had " + str(stats["money"]) + " gold.")
-        player_turns = player_turns + 1
-        if result == True:
+        player_turns = player_turns + 1 #adds one to turns taken.
+        if result == True: #if you win it gives you some of enemies money.
             print("You slay the " + enemy["name"] + " and take some money you find near it.")
             stats["money"] = stats["money"] + random.randrange(1, enemy["money"], 1)
-        else:
+        else: #if you lose you lose your money and sends you home.
             print("You wake up a bit disorientated in your own bed.")
             print("You have a message that reads 'I found you passed out and bleeding, I looked after you but took payment for this from your possesions.")
             stats["money"] = 0
             current_place = places["Home"]
     else:
-        item = items_list[random.randrange(1, 7, 1)]
+        item = items_list[random.randrange(1, 7, 1)] #Gives you random item
         print("You find a random " + item["name"] + ".")
         random_item(item)
 
 
     print("You now have " + str(stats["money"]) + " gold.")
 
-def random_item(item):
+def random_item(item): #works out if player wants to keep random item or not.
     global weapon
     global armour
     if item["type"] == "W":
@@ -314,7 +313,7 @@ def random_item(item):
                 return
 
 
-def enemy_calculator():
+def enemy_calculator(): #calculates enemy depending on your room
     if current_place == places["Stream"]:
         enemy = enemy_list[random.randrange(1, 7, 1)]
     elif current_place == places["Forest"]:
@@ -333,7 +332,7 @@ def enemy_calculator():
         enemy = enemy_list[random.choice([15, 25, 28])]
     return enemy
 
-def execute_train(stat):
+def execute_train(stat): #Trains your stats for the cost of 25
     if stats["money"] >= 25:
         stats["money"] = stats["money"] - 25 
         stats[stat] = stats[stat] + 1
@@ -341,7 +340,7 @@ def execute_train(stat):
     else:
         print("You don't have enough gold, get out of here.")
 
-def execute_command(command):
+def execute_command(command): #works out which command to do
     
     global arena_level
     global player_turns
@@ -364,14 +363,14 @@ def execute_command(command):
             execute_drop(command[1])
         else:
             print("sell what?")
-    elif command[0] == "explore" and current_place["battle"] == True:
+    elif command[0] == "explore" and current_place["battle"] == True: #Fights
         execute_explore()
-    elif command[0] == "train" and current_place == places["Gym"]:
+    elif command[0] == "train" and current_place == places["Gym"]: #Trains stats
         if len(command) > 1:
             execute_train(command[1])
         else:
             print("Train what?")
-    elif command[0] == "fight" and current_place == places["Battle"]:
+    elif command[0] == "fight" and current_place == places["Battle"]: #Runs arena Fights
         if arena_level < 50:
             player_turns = player_turns + 1
             if fight_monster(enemy_list[arena_level]) == True:
@@ -385,15 +384,15 @@ def execute_command(command):
     else:
         print("That makes no sense, try another input.")
 
-def fight_monster(enemy):
+def fight_monster(enemy): #Function to fight the monsters
     e_health = enemy["health"]
     p_health = stats["health"]
     counter = 0
     p_counter = 0
     e_counter = 0
     while e_health > 0 and p_health > 0:
-        enemy_speed = random.randrange(enemy["speed"], enemy["speed"] * 2, 1)
-        player_speed = random.randrange(stats["speed"], stats["speed"] * 2, 1)
+        enemy_speed = random.randrange(enemy["speed"], enemy["speed"] * 2, 1) #randomises a number based on persons speed, whoever has higher
+        player_speed = random.randrange(stats["speed"], stats["speed"] * 2, 1)#speed gets the attack off.
         counter = counter + 1
         if enemy_speed > player_speed:
             e_counter = e_counter + 1
@@ -425,7 +424,7 @@ def fight_monster(enemy):
 
 
 
-def menu(exits, room_items):
+def menu(exits, room_items): #the menu and clears the screen every time you do it again
     
     print_menu(exits, room_items)
 
@@ -443,9 +442,9 @@ def menu(exits, room_items):
 def move(exits, direction):
 
     
-    return places[exits[direction]]
+    return places[exits[direction]] 
 
-def print_game_menu():
+def print_game_menu(): #prints our main menu
     print()
     print()
     print()
@@ -460,7 +459,7 @@ def print_game_menu():
     user_choice = input("Press a Number and hit ENTER . . . ")
     return user_choice
 
-def print_score_board():
+def print_score_board(): #prints scoreboard out
     os.system('cls' if os.name == 'nt' else 'clear')
     print()
     print('{:^80}'.format("Here is the score board"))
@@ -469,7 +468,7 @@ def print_score_board():
     user_choice = input("Press key to return to menu . . . ")
     return
 
-def print_rules():
+def print_rules(): #prints Rules out
     os.system('cls' if os.name == 'nt' else 'clear')
     print()
     print('{:^80}'.format("Here are the rules"))
@@ -483,7 +482,7 @@ def print_rules():
     user_choice = input("Press key to return to menu . . . ")
     return
 
-def exit_game():
+def exit_game(): #Exits from game
     os.system('cls' if os.name == 'nt' else 'clear')
     print()
     print('{:^80}'.format("GOOD BYE"))
@@ -491,7 +490,7 @@ def exit_game():
     time.sleep(1)
     return
 
-def read_score():
+def read_score(): #reads the score out of the file
     content = []
     with open("scores.txt", "r+") as f:
         content = f.readlines()
@@ -512,7 +511,7 @@ def read_score():
         current_player.name = user
         scores.append(current_player)
 
-def print_score():
+def print_score(): #prints score out from the memory
     for pl in scores:
         print('{:^80}'.format(pl.score + "  -  " + pl.name))
 
@@ -520,7 +519,7 @@ def print_score():
 
 def main():
 
-    read_score()
+    read_score() #reads score at start for later reference
 
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -536,7 +535,7 @@ def main():
             return
 
 
-    os.system('cls' if os.name == 'nt' else 'clear') 
+    os.system('cls' if os.name == 'nt' else 'clear') #after doing the menu it clears screen and starts game
 
     
     while True:

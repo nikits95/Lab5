@@ -20,10 +20,3 @@ stats = {
 arena_level = 1
 current_place = places["Home"]
 
-#Rules
-
-#Health Change?
-#Speed to weight downside?
-#Misc Items?
-#Maybe experience?
-#Home storage box/Piggybank?
