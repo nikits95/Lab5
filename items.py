@@ -249,7 +249,7 @@ armour_ironboots = {
 }
 
 armour_justice = {
-    "id": "Justice Armour",
+    "id": "jarmour",
     
     "name": "Armour of Justice",
 

@@ -11,8 +11,6 @@ enemy_giantspider = {
 
 	"speed" : 35,
 
-	"reward" : "",
-
 	"money" : 46
 }
 
@@ -28,8 +26,6 @@ enemy_goblin = {
 	"defence" : 23,
 
 	"speed" : 19,
-
-	"reward" : "",
 
 	"money" : 31
 }
@@ -47,8 +43,6 @@ enemy_chiefgoblin = {
 
 	"speed" : 34,
 
-	"reward" : "",
-
 	"money" : 42
 }
 
@@ -64,8 +58,6 @@ enemy_knight = {
 	"defence" : 36,
 
 	"speed" : 36,
-
-	"reward" : "",
 
 	"money" : 40
 }
@@ -84,8 +76,6 @@ enemy_gladiator = {
 
 	"speed" : 49,
 
-	"reward" : "",
-
 	"money" : 75
 }
 
@@ -101,8 +91,6 @@ enemy_minihydra = {
 	"defence" : 59,
 
 	"speed" : 48,
-
-	"reward" : "",
 
 	"money" : 76
 }
@@ -120,8 +108,6 @@ enemy_giantrat = {
 
 	"speed" : 18,
 
-	"reward" : "",
-
 	"money" : 29
 }
 
@@ -137,8 +123,6 @@ enemy_wildbear = {
 	"defence" : 19,
 
 	"speed" : 20,
-
-	"reward" : "",
 
 	"money" : 30
 }
@@ -156,8 +140,6 @@ enemy_snake = {
 
 	"speed" : 8,
 
-	"reward" : "",
-
 	"money" : 8
 }
 
@@ -173,8 +155,6 @@ enemy_boar = {
 	"defence" : 2,
 
 	"speed" : 7,
-
-	"reward" : "",
 
 	"money" : 5
 }
@@ -192,8 +172,6 @@ enemy_owlbear = {
 
 	"speed" : 21,
 
-	"reward" : "",
-
 	"money" : 27
 }
 
@@ -209,8 +187,6 @@ enemy_gnolls = {
 	"defence" : 13,
 
 	"speed" : 10,
-
-	"reward" : "",
 
 	"money" : 13
 }
@@ -228,8 +204,6 @@ enemy_spider = {
 
 	"speed" : 11,
 
-	"reward" : "",
-
 	"money" : 15
 }
 
@@ -245,8 +219,6 @@ enemy_beastmen = {
 	"defence" : 23,
 
 	"speed" : 19,
-
-	"reward" : "",
 
 	"money" : 29
 }
@@ -264,8 +236,6 @@ enemy_wildwolf = {
 
 	"speed" : 13,
 
-	"reward" : "",
-
 	"money" : 12
 }
 
@@ -282,8 +252,6 @@ enemy_deadlyscorp = {
 
 	"speed" : 6,
 
-	"reward" : "",
-
 	"money" : 7
 }
 
@@ -294,15 +262,13 @@ enemy_kraken = {
 
 	"health" : 1000,
 
-	"strength" : 500,
+	"strength" : 120,
 
-	"defence" : 250,
+	"defence" : 90,
 
-	"speed" : 50,
+	"speed" : 85,
 
-	"reward" : "",
-
-	"money" : 5000
+	"money" : 0
 }
 
 #The numbers need to be changed so that it is relative to other parts of the game.
@@ -318,8 +284,6 @@ enemy_ghoul = {
 
 	"speed" : 37,
 
-	"reward" : "",
-
 	"money" : 41
 }
 
@@ -333,8 +297,6 @@ enemy_orc = {
 	"defence" : 24,
 
 	"speed" : 19,
-
-	"reward" : "",
 
 	"money" : 32
 }
@@ -350,8 +312,6 @@ enemy_cyclops = {
 
 	"speed" : 35,
 
-	"reward" : "",
-
 	"money" : 40
 }
 
@@ -365,8 +325,6 @@ enemy_groupwolf = {
 	"defence" : 21,
 
 	"speed" : 22,
-
-	"reward" : "",
 
 	"money" : 33
 }
@@ -382,8 +340,6 @@ enemy_ogres = {
 
 	"speed" : 37,
 
-	"reward" : "",
-
 	"money" : 39
 }
 
@@ -397,8 +353,6 @@ enemy_babyminotaurs = {
 	"defence" : 7,
 
 	"speed" : 9,
-
-	"reward" : "",
 
 	"money" : 6
 }
@@ -414,8 +368,6 @@ enemy_chiefminotaurs = {
 
 	"speed" : 52,
 
-	"reward" : "",
-
 	"money" : 73
 }
 
@@ -429,8 +381,6 @@ enemy_werewovles = {
 	"defence" : 58,
 
 	"speed" : 48,
-
-	"reward" : "",
 
 	"money" : 85
 }
@@ -446,8 +396,6 @@ enemy_hugeants = {
 
 	"speed" : 21,
 
-	"reward" : "",
-
 	"money" : 34
 }
 
@@ -461,8 +409,6 @@ enemy_evilmonk = {
 	"defence" : 37,
 
 	"speed" : 36,
-
-	"reward" : "",
 
 	"money" : 45
 }
@@ -478,8 +424,6 @@ enemy_centipede = {
 
 	"speed" : 12,
 
-	"reward" : "",
-
 	"money" : 14
 }
 
@@ -493,8 +437,6 @@ enemy_arachnoid = {
 	"defence" : 19,
 
 	"speed" : 23,
-
-	"reward" : "",
 
 	"money" : 30
 }
@@ -510,8 +452,6 @@ enemy_serpent = {
 
 	"speed" : 12,
 
-	"reward" : "",
-
 	"money" : 16
 }
 
@@ -525,8 +465,6 @@ enemy_barghest = {
 	"defence" : 38,
 
 	"speed" : 40,
-
-	"reward" : "",
 
 	"money" : 46
 }
@@ -542,8 +480,6 @@ enemy_worgen = {
 
 	"speed" : 50,
 
-	"reward" : "",
-
 	"money" : 87
 }
 
@@ -557,8 +493,6 @@ enemy_manticore = {
 	"defence" : 59,
 
 	"speed" : 51,
-
-	"reward" : "",
 
 	"money" : 78
 }
@@ -574,8 +508,6 @@ enemy_possvillagers = {
 
 	"speed" : 5,
 
-	"reward" : "",
-
 	"money" : 7
 }
 
@@ -589,8 +521,6 @@ enemy_darkelves = {
 	"defence" : 23,
 
 	"speed" : 20,
-
-	"reward" : "",
 
 	"money" : 28
 }
@@ -606,8 +536,6 @@ enemy_frogzard = {
 
 	"speed" : 13,
 
-	"reward" : "",
-
 	"money" : 15
 }
 
@@ -621,8 +549,6 @@ enemy_mantik = {
 	"defence" : 34,
 
 	"speed" : 38,
-
-	"reward" : "",
 
 	"money" : 45
 }
@@ -638,8 +564,6 @@ enemy_rat = {
 
 	"speed" : 14,
 
-	"reward" : "",
-
 	"money" : 15
 }
 
@@ -653,8 +577,6 @@ enemy_crab = {
 	"defence" : 6,
 
 	"speed" : 7,
-
-	"reward" : "",
 
 	"money" : 8
 }
@@ -670,8 +592,6 @@ enemy_giantcrab = {
 
 	"speed" : 48,
 
-	"reward" : "",
-
 	"money" : 76
 }
 
@@ -685,8 +605,6 @@ enemy_groupgoblin = {
 	"defence" : 22,
 
 	"speed" : 22,
-
-	"reward" : "",
 
 	"money" : 27
 }
@@ -702,8 +620,6 @@ enemy_twinserpent = {
 
 	"speed" : 36,
 
-	"reward" : "",
-
 	"money" : 48
 }
 
@@ -717,8 +633,6 @@ enemy_phoenix = {
 	"defence" : 57,
 
 	"speed" : 53,
-
-	"reward" : "",
 
 	"money" : 79
 }
@@ -734,8 +648,6 @@ enemy_wraith = {
 
 	"speed" : 38,
 
-	"reward" : "",
-
 	"money" : 47
 }
 
@@ -749,8 +661,6 @@ enemy_bugbear = {
 	"defence" : 10,
 
 	"speed" : 12,
-
-	"reward" : "",
 
 	"money" : 14
 }
@@ -766,8 +676,6 @@ enemy_giantorc = {
 
 	"speed" : 19,
 
-	"reward" : "",
-
 	"money" : 30
 }
 
@@ -781,8 +689,6 @@ enemy_ettin = {
 	"defence" : 34,
 
 	"speed" : 32,
-
-	"reward" : "",
 
 	"money" : 46
 }
@@ -798,8 +704,6 @@ enemy_griffons = {
 
 	"speed" : 38,
 
-	"reward" : "",
-
 	"money" : 47
 }
 
@@ -814,8 +718,6 @@ enemy_lich = {
 
 	"speed" : 25,
 
-	"reward" : "",
-
 	"money" : 29
 }
 
@@ -824,13 +726,11 @@ enemy_lichking = {
 
 	"health" : 200,
 
-	"strength" : 65,
+	"strength" : 65, 
 
 	"defence" : 64,
 
 	"speed" : 60,
-
-	"reward" : "",
 
 	"money" : 150
 }

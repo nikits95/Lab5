@@ -20,19 +20,10 @@ stats = {
 arena_level = 1
 current_place = places["Home"]
 
-#Random item finds.
-#Arena
-#The map, Items in places.
-#LeaderBoard
 #Rules
-#Death room
-#Link Strength to total carryable mass
 
 #Health Change?
-#Game Timer?
 #Speed to weight downside?
 #Misc Items?
 #Maybe experience?
-#Maybe selling items?
 #Home storage box/Piggybank?
-#Armour/Weapon seperate slots on person, not just in 'inv'?
