@@ -10,6 +10,7 @@ import os
 import time
 import io
 
+player_turns = 0
 
 class players:
     score = ""
@@ -356,6 +357,7 @@ def execute_explore():
         result = fight_monster(enemy)
         print("")
         print("You had " + str(stats["money"]) + " gold.")
+        player_turns = player_turns + 1
         if result == True:
             print("You slay the " + enemy["name"] + " and take some money you find near it.")
             stats["money"] = stats["money"] + random.randrange(1, enemy["money"], 1)
