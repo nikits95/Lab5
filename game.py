@@ -8,7 +8,14 @@ from enemies import *
 import random
 import os
 import time
+import io
 
+
+class players:
+    score = ""
+    name = ""
+
+scores = []
 
 
 def list_of_items(items):
@@ -518,6 +525,7 @@ def print_score_board():
     print()
     print('{:^80}'.format("Here is the score board"))
     print()
+    print_score()
     user_choice = input("Press key to return to menu . . . ")
     return
 
@@ -537,9 +545,36 @@ def exit_game():
     time.sleep(1)
     return
 
+def read_score():
+    content = []
+    with open("scores.txt", "r+") as f:
+        content = f.readlines()
+    for line in content:
+        score = ""
+        user = ""
+        flag = False
+        for ch in line:
+            if ch == ':':
+                flag = True
+            else:
+                if flag == True: 
+                    user = user + ch
+                else: 
+                    score = score + ch
+        current_player = players()
+        current_player.score = score
+        current_player.name = user
+        scores.append(current_player)
+
+def print_score():
+    for pl in scores:
+        print('{:^80}'.format(pl.score + "  -  " + pl.name))
+
 
 # This is the entry point of our program
 def main():
+
+    read_score()
 
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
