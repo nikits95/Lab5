@@ -10,7 +10,7 @@ weapon_dagger = {
 
     "mass": 1.0,
 
-    "damage": 10,
+    "damage": 2,
 
     "value": 30,
 
@@ -27,7 +27,7 @@ weapon_sword = {
 
     "mass": 2.5,
 
-    "damage": 25,
+    "damage": 4,
 
     "value": 60,
 
@@ -44,9 +44,9 @@ weapon_2hand = {
 
     "mass": 3.5,
 
-    "damage": 35,
+    "damage": 6,
 
-    "value": 100,
+    "value": 120,
 
     "type": "W"
 }
@@ -61,9 +61,9 @@ weapon_hammer = {
 
     "mass": 3.0,
 
-    "damage": 30,
+    "damage": 5,
 
-    "value": 80,
+    "value": 100,
 
     "type": "W"
 }
@@ -76,11 +76,11 @@ weapon_spear = {
     "description":
     "A sharp and deadly spear.",
 
-    "mass": 2.5,
+    "mass": 2.0,
 
-    "damage": 25,
+    "damage": 4,
 
-    "value": 55,
+    "value": 80,
 
     "type": "W"
 }
@@ -95,9 +95,9 @@ weapon_bow = {
 
     "mass": 1.5,
 
-    "damage": 15,
+    "damage": 3,
 
-    "value": 20,
+    "value": 50,
 
     "type": "W"
 }
@@ -110,14 +110,13 @@ weapon_justicesword = {
     "description":
     "A powerful diamond sword which can only be held by the worthy. It deliver a deadly blow to enemies.",
 
-    "mass": 20.0,
+    "mass": 7.0,
 
-    "damage": 350,
+    "damage": 15,
 
-    "value": 1000,
+    "value": 500,
 
     "type": "W"
-    #sword required to kill the Kraken
 }
 
 weapon_nothing = {
@@ -146,9 +145,9 @@ armour_halfhelm = {
 
     "mass": 1.0,
 
-    "defence": 10,
+    "defence": 2,
 
-    "value": 10,
+    "value": 30,
 
     "type": "A"
 }
@@ -162,9 +161,9 @@ armour_chain = {
 
     "mass": 2.5,
 
-    "defence": 25,
+    "defence": 4,
 
-    "value": 10,
+    "value": 70,
 
     "type": "A"
 }
@@ -176,11 +175,11 @@ armour_plate = {
 
     "description": "A heavy piece of plate mail that can protect your body from lots of damage.",
 
-    "mass": 5.0,
+    "mass": 4.0,
 
-    "defence": 50,
+    "defence": 6,
 
-    "value": 10,
+    "value": 140,
 
     "type": "A"
 }
@@ -192,11 +191,11 @@ armour_ironhelmet = {
 
     "description": "A light piece of iron helmet that can protect you from lots of damage.",
 
-    "mass": 4.0,
+    "mass": 3.0,
 
-    "defence": 40,
+    "defence": 5,
 
-    "value": 10,
+    "value": 100,
 
     "type": "A"
 }
@@ -210,9 +209,9 @@ armour_ironchestplate = {
 
     "mass": 2.0,
 
-    "defence": 20,
+    "defence": 4,
 
-    "value": 10,
+    "value": 60,
 
     "type": "A"
 }
@@ -224,11 +223,11 @@ armour_ironleggings = {
 
     "description": "A light piece of iron leggings that can protect you from lots of damage.",
 
-    "mass": 1.0,
+    "mass": 1.5,
 
-    "defence": 10,
+    "defence": 3,
 
-    "value": 10,
+    "value": 50,
 
     "type": "A"
 }
@@ -240,11 +239,11 @@ armour_ironboots = {
 
     "description": "A light piece of iron boots that can protect you from lots of damage.",
 
-    "mass": 3.0,
+    "mass": 2.0,
 
-    "defence": 30,
+    "defence": 5,
 
-    "value": 10,
+    "value": 120,
 
     "type": "A"
 }
@@ -256,15 +255,14 @@ armour_justice = {
 
     "description": "This super strong diamond armour can only be worn by the worthy. This piece of armour can withstand even the deadliest attacks. ",
 
-    "mass": 15.0,
+    "mass": 7.0,
 
-    "defence": 400,
+    "defence": 15,
 
-    "value": 10,
+    "value": 500,
 
     "type": "A"
 
-    #required to defeat the kraken
 }
 
 armour_nothing = {
@@ -294,9 +292,9 @@ weapon_bluntsword = {
     "description":
     "A blunt and non effective sword which is amlost broken. But it still hurts",
 
-    "mass": 0.2,
+    "mass": 0.75,
 
-    "damage": 2,
+    "damage": 1,
 
     "value": 0,
 
@@ -311,9 +309,9 @@ weapon_woodspear = {
     "description":
     "A light spear but low durability..",
 
-    "mass": 0.5,
+    "mass": 1.0,
 
-    "damage": 5,
+    "damage": 2,
 
     "value": 0,
 
@@ -328,24 +326,7 @@ weapon_bluntknife = {
     "description":
     "A very light knife but very easily broken.",
 
-    "mass": 0.1,
-
-    "damage": 5,
-
-    "value": 0,
-
-    "type": "W"
-}
-
-weapon_brokenbow = {
-    "id": "brokenbow",
-
-    "name": "Damaged Bow",
-
-    "description":
-    "A damaged bow but can still be used agasint your enemies.",
-
-    "mass": 0.1,
+    "mass": 0.5,
 
     "damage": 1,
 
@@ -363,9 +344,9 @@ armour_woodenboots = {
 
     "description": "A light piece of wooden boots that can protect you from weak attacks.",
 
-    "mass": 0.1,
+    "mass": 0.5,
 
-    "defence": 4,
+    "defence": 1,
 
     "value": 0,
 
@@ -379,7 +360,7 @@ armour_woodenleggings = {
 
     "description": "A light piece of wooden leggings that can protect you from weak enemies.",
 
-    "mass": 0.5,
+    "mass": 0.75,
 
     "defence": 2,
 
@@ -395,9 +376,9 @@ armour_woodenhelmet = {
 
     "description": "A light piece of wooden helmet that can protect you from weak attacks",
 
-    "mass": 0.3,
+    "mass": 0.8,
 
-    "defence": 0.3,
+    "defence": 1,
 
     "value": 0,
 
@@ -411,9 +392,9 @@ armour_woodenchestplate = {
 
     "description": "A light piece of wooden helmet that can protect your body from weak attacks.",
 
-    "mass": 0.2,
+    "mass": 1.0,
 
-    "defence": 4,
+    "defence": 3,
 
     "value": 0,
 
@@ -421,27 +402,11 @@ armour_woodenchestplate = {
 }
 
 items_list = {
-    1 : weapon_dagger,
-    2 : weapon_sword,
-    3 : weapon_2hand,
-    4 : weapon_hammer,
-    5 : weapon_spear,
-    6 : weapon_justicesword,
-    7 : weapon_bow,
-    8 : armour_halfhelm,
-    9 : armour_chain,
-    10 : armour_plate,
-    11 : armour_ironhelmet,
-    12 : armour_justice,
-    13 : armour_ironchestplate,
-    14 : armour_ironleggings,
-    15 : armour_ironboots,
-    16 : weapon_bluntsword,
-    17 : weapon_woodspear,
-    18 : weapon_bluntknife,
-    19 : weapon_brokenbow,
-    20 : armour_woodenboots,
-    21 : armour_woodenleggings,
-    22 : armour_woodenhelmet,
-    23 : armour_woodenchestplate
+    1 : weapon_bluntsword,
+    2 : weapon_woodspear,
+    3 : weapon_bluntknife,
+    4 : armour_woodenboots,
+    5 : armour_woodenleggings,
+    6 : armour_woodenhelmet,
+    7 : armour_woodenchestplate
 }

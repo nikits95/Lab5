@@ -103,7 +103,7 @@ place_gutfeel = {
     You should probably go back to to the main entrance but as soon as you turn round
     a shadowed figure hits you across the head, knocking you unconscious.""",
 
-    "exits": {"north": "Caves"},
+    "exits": {},
 
     "items": [],
 

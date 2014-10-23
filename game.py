@@ -18,7 +18,6 @@ class players:
 
 scores = []
 
-
 def list_of_items(items):
     """This function takes a list of items (see items.py for the definition) and
     returns a comma-separated list of item names (as a string). For example:
@@ -126,6 +125,9 @@ def print_room(room):
     # Display room description
     print(room["description"])
     print()
+    if room == places["Leaderboard"]:
+        print_score()
+        print()
     print_room_items(room)
 
     #
@@ -214,6 +216,8 @@ def print_menu(exits, room_items):
             if armour[0] != armour_nothing:
                 value = (armour[0]["value"] * 0.6) % 1
                 print("SELL " + armour[0]["id"] + " for " + str(int((armour[0]["value"] * 0.6) - value)) + ".")
+        if current_place == places["Battle"]:
+            print("Fight the next Arena opponent!")
         print()
         print("What do you want to do?")
 
@@ -225,6 +229,9 @@ def kraken_fight():
         print(" \   ^   /  | | \  | | \  | |___    |___/  |")
         print("  \ / \ /   | |  \ | |  \ | |       |   \  |")
         print("   V   V    | |   \| |   \| |_____  |    \ .")
+        print("")
+        print("")
+        print("You managed to win the game in only " + str(player_turns) + " fights. Try and do it in less next time.")
     else:
         print("")
         print("You wake up a bit disorientated in your own bed with a vague memory of fighting the Kraken.")
@@ -350,8 +357,9 @@ def execute_drop(item_id):
 
 def execute_explore():
     global current_place
+    global player_turns
     print("explore " + current_place["name"])
-    if random.randrange(1, 6, 1) < 5:
+    if random.randrange(1, 16, 1) > 15:
         enemy = enemy_calculator()
         print("You encounter a random " + enemy["name"])
         result = fight_monster(enemy)
@@ -367,8 +375,36 @@ def execute_explore():
             stats["money"] = 0
             current_place = places["Home"]
     else:
-        print("You find a random ")
+        item = items_list[random.randrange(1, 7, 1)]
+        print("You find a random " + item["name"] + ".")
+        random_item(item)
+
+
     print("You now have " + str(stats["money"]) + " gold.")
+
+def random_item(item):
+    global weapon
+    global armour
+    if item["type"] == "W":
+        while True:
+            print("The item has " + str(item["damage"]) + " damage and your item has " + str(weapon[0]["damage"]) + " do you want to swap? Y/N")
+            answer = input("> ")
+            if answer == "Y" or answer == "y":
+                stats["mass"] = stats["mass"] - weapon[0]["mass"] + item["mass"]
+                weapon[0] = item
+                return
+            elif answer == "N" or answer == "n":
+                return
+    else:
+        while True:
+            print("The item has " + str(item["defence"]) + " defence and your item has " + str(armour[0]["defence"]) + " do you want to swap? Y/N")
+            answer = input("> ")
+            if answer == "Y" or answer == "y":
+                stats["mass"] = stats["mass"] - armour[0]["mass"] + item["mass"]
+                armour[0] = item
+                return
+            elif answer == "N" or answer == "n":
+                return
 
 
 def enemy_calculator():
@@ -405,6 +441,7 @@ def execute_command(command):
     execute_take, or execute_drop, supplying the second word as the argument.
 
     """
+    global arena_level
     if command[0] == "go":
         if len(command) > 1:
             execute_go(command[1])
@@ -429,6 +466,16 @@ def execute_command(command):
             execute_train(command[1])
         else:
             print("Train what?")
+    elif command[0] == "fight" and current_place == places["Battle"]:
+        if arena_level < 50:
+            if fight_monster(enemy_list[arena_level]) == True:
+                print("Congratulations you killed your next opponent.")
+                arena_level = arena_level + 1
+                stats["money"] = stats["money"] + 10
+            else:
+                print("They drag you out bleeding and patch you up. Thankfully you lost no money, just a whole lot of pride.")
+        else:
+            print("Noone wants to fight you, you are already the champion. Perhaps you should prove your worth by killing the Kraken?")
     else:
         print("This makes no sense.")
 
@@ -571,7 +618,6 @@ def read_score():
 def print_score():
     for pl in scores:
         print('{:^80}'.format(pl.score + "  -  " + pl.name))
-
 
 
 # This is the entry point of our program

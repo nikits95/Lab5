@@ -1,6 +1,6 @@
 from items import *
 from map import places
-weapon = [weapon_dagger]
+weapon = [weapon_nothing]
 armour = [armour_nothing]
 
 stats = {
@@ -17,6 +17,7 @@ stats = {
 	"money": 10
 }
 
+arena_level = 1
 current_place = places["Home"]
 
 #Random item finds.
